@@ -71,3 +71,8 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\z
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csproj.CopyComplete
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.xml
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.pdb

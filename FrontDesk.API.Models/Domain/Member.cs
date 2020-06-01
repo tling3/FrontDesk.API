@@ -1,4 +1,4 @@
-﻿using FrontDesk.API.Models.Request.Update;
+﻿using FrontDesk.API.Models.Request;
 using System;
 
 namespace FrontDesk.API.Models.Domain
