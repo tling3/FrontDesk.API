@@ -25,6 +25,8 @@ namespace FrontDesk.API
         {
             services.AddDbContext<MemberContext>(option => option.UseSqlServer
             (Configuration.GetConnectionString("FrontDeskConnection")));
+            services.AddDbContext<SessionContext>(option => option.UseSqlServer
+            (Configuration.GetConnectionString("FrontDeskConnection")));
 
             services.AddControllers();
 
