@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace FrontDesk.API.Models.Request
+namespace FrontDesk.API.Models.Domain
 {
-    public class MemberInsertRequest
+    public class MemberInsert
     {
         [Required]
         public string FirstName { get; set; }
