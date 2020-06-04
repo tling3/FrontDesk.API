@@ -43,14 +43,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Session.cs" />
+    <Compile Include="Domain\SessionInsert.cs" />
+    <Compile Include="Domain\SessionUpdate.cs" />
     <Compile Include="Domain\Member.cs" />
     <Compile Include="Domain\MemberInsert.cs" />
     <Compile Include="Domain\MemberUpdate.cs" />
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />
-    <Compile Include="Request\MemberInsertRequest.cs" />
-    <Compile Include="Request\MemberUpdateRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
