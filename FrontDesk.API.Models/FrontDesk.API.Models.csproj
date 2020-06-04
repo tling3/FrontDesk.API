@@ -47,7 +47,6 @@
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />
-    <Compile Include="Profiles\MembersProfile.cs" />
     <Compile Include="Request\MemberInsertRequest.cs" />
     <Compile Include="Request\MemberUpdateRequest.cs" />
   </ItemGroup>
