@@ -52,6 +52,9 @@
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />
+    <Compile Include="DTOs\SessionInsertDto.cs" />
+    <Compile Include="DTOs\SessionReadDto.cs" />
+    <Compile Include="DTOs\SessionUpdateDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
