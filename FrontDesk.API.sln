@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontDesk.API", "FrontDesk.API\FrontDesk.API.csproj", "{0A303522-462D-441F-AABB-180D0609A02C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontDesk.API.Models", "FrontDesk.API.Models\FrontDesk.API.Models.csproj", "{865E72EA-4D8A-4C8D-9DE8-FF96C73F59E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontDesk.API.Data", "FrontDesk.API.Data\FrontDesk.API.Data.csproj", "{6D27B652-F7BC-4EAB-96C8-D5DCEF1BBB03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0A303522-462D-441F-AABB-180D0609A02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A303522-462D-441F-AABB-180D0609A02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A303522-462D-441F-AABB-180D0609A02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865E72EA-4D8A-4C8D-9DE8-FF96C73F59E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865E72EA-4D8A-4C8D-9DE8-FF96C73F59E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865E72EA-4D8A-4C8D-9DE8-FF96C73F59E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865E72EA-4D8A-4C8D-9DE8-FF96C73F59E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D27B652-F7BC-4EAB-96C8-D5DCEF1BBB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D27B652-F7BC-4EAB-96C8-D5DCEF1BBB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D27B652-F7BC-4EAB-96C8-D5DCEF1BBB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D27B652-F7BC-4EAB-96C8-D5DCEF1BBB03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
