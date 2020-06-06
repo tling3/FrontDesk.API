@@ -1,8 +1,9 @@
 ﻿using FrontDesk.API.Data.Context;
 using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
@@ -13,9 +14,9 @@ namespace FrontDesk.API.Data.Repositories
         {
             _context = context;
         }
-        public IEnumerable<Session> GetAllSessions()
+        public Task<List<Session>> GetAllSessions()
         {
-            return _context.Session.ToList();
+            return _context.Session.ToListAsync();
         }
     }
 }

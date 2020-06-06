@@ -3,6 +3,7 @@ using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FrontDesk.API.Controllers
 {
@@ -23,9 +24,9 @@ namespace FrontDesk.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<MemberReadDto>> GetAllMembers()
+        public async Task<ActionResult<IEnumerable<MemberReadDto>>> GetAllMembers()
         {
-            var memberItems = _repository.GetAllMembers();
+            var memberItems = await _repository.GetAllMembers();
             return Ok(_mapper.Map<IEnumerable<MemberReadDto>>(memberItems));
         }
     }

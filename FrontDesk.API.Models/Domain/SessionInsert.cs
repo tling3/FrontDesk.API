@@ -8,17 +8,17 @@ namespace FrontDesk.API.Models.Domain
         [Required]
         public string AgeLevel { get; set; }
         [Required]
-        public string ClassType { get; set; }
+        public string SessionType { get; set; }
         [Required]
-        public string ClassLevel { get; set; }
+        public string SessionLevel { get; set; }
         [Required]
         public string Instructor { get; set; }
         [Required]
-        public DateTime StartTime { get; set; }
+        public TimeSpan StartTime { get; set; }
         [Required]
-        public DateTime EndTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         [Required]
-        public int WeekdayNameId { get; set; }
+        public int WeekdayId { get; set; }
         [Required]
         public string ModifiedBy { get; set; }
     }

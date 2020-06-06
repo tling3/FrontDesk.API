@@ -1,8 +1,8 @@
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csproj.CoreCompileInputs.cache
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csprojAssemblyReference.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\FrontDesk.API.Models.dll.config
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\FrontDesk.API.Models.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\FrontDesk.API.Models.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Bcl.HashCode.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Data.SqlClient.dll
@@ -31,6 +31,9 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\S
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\System.Numerics.Vectors.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.xml
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Bcl.HashCode.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\Microsoft.Data.SqlClient.pdb
@@ -68,11 +71,7 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\p
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csproj.CoreCompileInputs.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csproj.CopyComplete
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.pdb
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.pdb
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.xml
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.pdb

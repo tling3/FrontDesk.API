@@ -1,6 +1,8 @@
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Data.dll.config
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Data.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Data.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Models.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Microsoft.Bcl.HashCode.dll
@@ -27,6 +29,9 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Sys
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\System.Threading.Tasks.Extensions.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Models.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\FrontDesk.API.Models.dll.config
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.xml
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Microsoft.Bcl.HashCode.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\Microsoft.EntityFrameworkCore.xml
@@ -54,8 +59,3 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\obj\Debug\Fro
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\obj\Debug\FrontDesk.API.Data.csproj.CopyComplete
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\obj\Debug\FrontDesk.API.Data.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\obj\Debug\FrontDesk.API.Data.pdb
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.pdb
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.xml
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Data\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.pdb

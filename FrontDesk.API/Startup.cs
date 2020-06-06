@@ -33,6 +33,7 @@ namespace FrontDesk.API
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IMemberRepo, SqlMemberRepo>();
+            services.AddScoped<ISessionRepo, SqlSessionRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,8 +1,9 @@
 ﻿using FrontDesk.API.Data.Context;
 using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
@@ -15,9 +16,9 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public IEnumerable<Member> GetAllMembers()
+        public Task<List<Member>> GetAllMembers()
         {
-            return _context.Member.ToList();
+            return _context.Member.ToListAsync();
         }
     }
 }
