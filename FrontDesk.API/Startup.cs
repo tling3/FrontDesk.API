@@ -24,9 +24,11 @@ namespace FrontDesk.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MemberContext>(option => option.UseSqlServer
-            (Configuration.GetConnectionString("FrontDeskConnection")));
+                (Configuration.GetConnectionString("FrontDeskConnection")));
             services.AddDbContext<SessionContext>(option => option.UseSqlServer
-            (Configuration.GetConnectionString("FrontDeskConnection")));
+                (Configuration.GetConnectionString("FrontDeskConnection")));
+            services.AddDbContext<AttendanceContext>(option => option.UseSqlServer
+                (Configuration.GetConnectionString("FrontDeskConnection")));
 
             services.AddControllers();
 
@@ -34,6 +36,7 @@ namespace FrontDesk.API
 
             services.AddScoped<IMemberRepo, SqlMemberRepo>();
             services.AddScoped<ISessionRepo, SqlSessionRepo>();
+            services.AddScoped<IAttendanceRepo, SqlAttendanceRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

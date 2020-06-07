@@ -43,6 +43,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Attendance.cs" />
+    <Compile Include="Domain\AttendanceInsert.cs" />
+    <Compile Include="Domain\AttendanceUpdate.cs" />
     <Compile Include="Domain\Session.cs" />
     <Compile Include="Domain\SessionInsert.cs" />
     <Compile Include="Domain\SessionUpdate.cs" />

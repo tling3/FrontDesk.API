@@ -40,10 +40,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\AttendanceContext.cs" />
     <Compile Include="Context\SessionContext.cs" />
     <Compile Include="Context\MemberContext.cs" />
+    <Compile Include="Interfaces\IAttendanceRepo.cs" />
     <Compile Include="Interfaces\IMemberRepo.cs" />
     <Compile Include="Interfaces\ISessionRepo.cs" />
+    <Compile Include="Repositories\SqlAttendanceRepo.cs" />
     <Compile Include="Repositories\SqlMemberRepo.cs" />
     <Compile Include="Repositories\SqlSessionRepo.cs" />
   </ItemGroup>
