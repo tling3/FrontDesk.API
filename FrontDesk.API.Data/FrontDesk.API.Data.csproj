@@ -43,12 +43,15 @@
     <Compile Include="Context\AttendanceContext.cs" />
     <Compile Include="Context\SessionContext.cs" />
     <Compile Include="Context\MemberContext.cs" />
+    <Compile Include="Context\WeekdayContext.cs" />
     <Compile Include="Interfaces\IAttendanceRepo.cs" />
     <Compile Include="Interfaces\IMemberRepo.cs" />
     <Compile Include="Interfaces\ISessionRepo.cs" />
+    <Compile Include="Interfaces\IWeekdayRepo.cs" />
     <Compile Include="Repositories\SqlAttendanceRepo.cs" />
     <Compile Include="Repositories\SqlMemberRepo.cs" />
     <Compile Include="Repositories\SqlSessionRepo.cs" />
+    <Compile Include="Repositories\SqlWeekdayRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FrontDesk.API.Models\FrontDesk.API.Models.csproj">

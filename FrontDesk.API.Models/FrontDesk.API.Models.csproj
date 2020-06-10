@@ -52,12 +52,18 @@
     <Compile Include="Domain\Member.cs" />
     <Compile Include="Domain\MemberInsert.cs" />
     <Compile Include="Domain\MemberUpdate.cs" />
+    <Compile Include="Domain\Weekday.cs" />
+    <Compile Include="Domain\WeekdayInsert.cs" />
+    <Compile Include="Domain\WeekdayUpdate.cs" />
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />
     <Compile Include="DTOs\SessionInsertDto.cs" />
     <Compile Include="DTOs\SessionReadDto.cs" />
     <Compile Include="DTOs\SessionUpdateDto.cs" />
+    <Compile Include="DTOs\WeekdayInsertDto.cs" />
+    <Compile Include="DTOs\WeekdayReadDto.cs" />
+    <Compile Include="DTOs\WeekdayUpdateDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
