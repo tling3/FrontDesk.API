@@ -1,9 +1,10 @@
 ﻿using System;
 
-namespace FrontDesk.API.Models.Domain
+namespace FrontDesk.API.Models.DTOs
 {
-    public class Attendance : AttendanceUpdate
+    public class AttendanceReadDto : AttendanceUpdateDto
     {
+        public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
     }

@@ -55,6 +55,9 @@
     <Compile Include="Domain\Weekday.cs" />
     <Compile Include="Domain\WeekdayInsert.cs" />
     <Compile Include="Domain\WeekdayUpdate.cs" />
+    <Compile Include="DTOs\AttendanceInsertDto.cs" />
+    <Compile Include="DTOs\AttendanceReadDto.cs" />
+    <Compile Include="DTOs\AttendanceUpdateDto.cs" />
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />

@@ -24,7 +24,7 @@ namespace FrontDesk.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Weekday>>> GetAllWeekdays()
+        public async Task<ActionResult<IEnumerable<WeekdayReadDto>>> GetAllWeekdays()
         {
             var weekdayItems = await _repository.GetAllWeekdays();
             return Ok(_mapper.Map<IEnumerable<WeekdayReadDto>>(weekdayItems));
