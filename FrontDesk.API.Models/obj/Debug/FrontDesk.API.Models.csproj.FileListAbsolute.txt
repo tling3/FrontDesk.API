@@ -75,3 +75,4 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\F
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csproj.CopyComplete
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API.Models\obj\Debug\FrontDesk.API.Models.csprojAssemblyReference.cache
