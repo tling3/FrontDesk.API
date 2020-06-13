@@ -43,18 +43,36 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Attendance.cs" />
+    <Compile Include="Domain\AttendanceInsert.cs" />
+    <Compile Include="Domain\AttendanceUpdate.cs" />
+    <Compile Include="Domain\MembershipType.cs" />
+    <Compile Include="Domain\MembershipTypeInsert.cs" />
+    <Compile Include="Domain\MembershipTypeUpdate.cs" />
     <Compile Include="Domain\Session.cs" />
     <Compile Include="Domain\SessionInsert.cs" />
     <Compile Include="Domain\SessionUpdate.cs" />
     <Compile Include="Domain\Member.cs" />
     <Compile Include="Domain\MemberInsert.cs" />
     <Compile Include="Domain\MemberUpdate.cs" />
+    <Compile Include="Domain\Weekday.cs" />
+    <Compile Include="Domain\WeekdayInsert.cs" />
+    <Compile Include="Domain\WeekdayUpdate.cs" />
+    <Compile Include="DTOs\AttendanceInsertDto.cs" />
+    <Compile Include="DTOs\AttendanceReadDto.cs" />
+    <Compile Include="DTOs\AttendanceUpdateDto.cs" />
     <Compile Include="DTOs\MemberInsertDto.cs" />
     <Compile Include="DTOs\MemberReadDto.cs" />
+    <Compile Include="DTOs\MembershipTypeInsertDto.cs" />
+    <Compile Include="DTOs\MembershipTypeReadDto.cs" />
+    <Compile Include="DTOs\MembershipTypeUpdateDto.cs" />
     <Compile Include="DTOs\MemberUpdateDto.cs" />
     <Compile Include="DTOs\SessionInsertDto.cs" />
     <Compile Include="DTOs\SessionReadDto.cs" />
     <Compile Include="DTOs\SessionUpdateDto.cs" />
+    <Compile Include="DTOs\WeekdayInsertDto.cs" />
+    <Compile Include="DTOs\WeekdayReadDto.cs" />
+    <Compile Include="DTOs\WeekdayUpdateDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
