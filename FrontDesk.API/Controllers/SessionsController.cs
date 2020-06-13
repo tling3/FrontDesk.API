@@ -24,7 +24,7 @@ namespace FrontDesk.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Session>>> GetAllSessions()
+        public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetAllSessions()
         {
             var sessionItems = await _repository.GetAllSessions();
             return Ok(_mapper.Map<IEnumerable<SessionReadDto>>(sessionItems));
