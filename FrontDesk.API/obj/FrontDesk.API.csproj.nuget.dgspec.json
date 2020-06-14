@@ -4,6 +4,37 @@
     "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {}
   },
   "projects": {
+    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
+        "projectName": "FrontDesk.API.Data",
+        "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
+                "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj",
+        "projectName": "FrontDesk.API.Models",
+        "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -29,7 +60,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
+                "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,6 +75,26 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
