@@ -7,5 +7,6 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IMemberRepo
     {
         Task<List<Member>> GetAllMembers();
+        Task<Member> GetMemberById(int id);
     }
 }

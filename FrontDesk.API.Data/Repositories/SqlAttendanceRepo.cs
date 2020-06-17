@@ -19,5 +19,10 @@ namespace FrontDesk.API.Data.Repositories
         {
             return _context.Attendance.ToListAsync();
         }
+        public Task<List<Attendance>> GetAttendanceById(int id)
+        {
+            //return _context.Attendance.
+            throw new System.NotImplementedException();
+        }
     }
 }

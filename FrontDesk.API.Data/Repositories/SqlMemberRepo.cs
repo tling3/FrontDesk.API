@@ -20,5 +20,10 @@ namespace FrontDesk.API.Data.Repositories
         {
             return _context.Member.ToListAsync();
         }
+
+        public Task<Member> GetMemberById(int id)
+        {
+            return _context.Member.FirstOrDefaultAsync(m => m.Id == id);
+        }
     }
 }

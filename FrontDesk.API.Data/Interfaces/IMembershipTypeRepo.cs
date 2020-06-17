@@ -7,5 +7,6 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IMembershipTypeRepo
     {
         Task<List<MembershipType>> GetAllMembershipTypes();
+        Task<MembershipType> GetMembershipTypeById(int id);
     }
 }

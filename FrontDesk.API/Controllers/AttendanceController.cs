@@ -29,5 +29,16 @@ namespace FrontDesk.API.Controllers
             var attendanceItems = await _repository.GetAllAttendance();
             return Ok(_mapper.Map<IEnumerable<AttendanceReadDto>>(attendanceItems));
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AttendanceReadDto>> GetAttendanceById(int id)
+        {
+            var attendanceItem = await _repository.GetAttendanceById(id);
+            if (attendanceItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<AttendanceReadDto>(attendanceItem));
+        }
     }
 }

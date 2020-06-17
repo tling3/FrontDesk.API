@@ -28,5 +28,16 @@ namespace FrontDesk.API.Controllers
             var membershipTypeItems = await _repository.GetAllMembershipTypes();
             return Ok(_mapper.Map<IEnumerable<MembershipTypeReadDto>>(membershipTypeItems));
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MembershipTypeReadDto>> GetMembershipTypeById(int id)
+        {
+            var membershipTypeItem = await _repository.GetMembershipTypeById(id);
+            if (membershipTypeItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<MembershipTypeReadDto>(membershipTypeItem));
+        }
     }
 }
