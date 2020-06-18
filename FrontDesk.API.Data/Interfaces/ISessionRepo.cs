@@ -7,5 +7,6 @@ namespace FrontDesk.API.Data.Interfaces
     public interface ISessionRepo
     {
         Task<List<Session>> GetAllSessions();
+        Task<Session> GetSessionById(int id);
     }
 }

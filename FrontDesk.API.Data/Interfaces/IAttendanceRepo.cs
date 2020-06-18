@@ -7,6 +7,6 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IAttendanceRepo
     {
         Task<List<Attendance>> GetAllAttendance();
-        Task<Attendance> GetAttendanceById(int id);
+        Task<List<Attendance>> GetAttendanceByMemberId(int id);
     }
 }
