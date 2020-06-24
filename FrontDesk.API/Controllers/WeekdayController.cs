@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
-using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -28,6 +27,17 @@ namespace FrontDesk.API.Controllers
         {
             var weekdayItems = await _repository.GetAllWeekdays();
             return Ok(_mapper.Map<IEnumerable<WeekdayReadDto>>(weekdayItems));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<WeekdayReadDto>> GetWeekdayById(int id)
+        {
+            var weekdayItem = await _repository.GetWeekdayById(id);
+            if (weekdayItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<WeekdayReadDto>(weekdayItem));
         }
     }
 }
