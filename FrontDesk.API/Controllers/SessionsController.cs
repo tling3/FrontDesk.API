@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
-using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -28,6 +27,17 @@ namespace FrontDesk.API.Controllers
         {
             var sessionItems = await _repository.GetAllSessions();
             return Ok(_mapper.Map<IEnumerable<SessionReadDto>>(sessionItems));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SessionReadDto>> GetSessionById(int id)
+        {
+            var sessionItem = await _repository.GetSessionById(id);
+            if (sessionItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<SessionReadDto>(sessionItem));
         }
     }
 }

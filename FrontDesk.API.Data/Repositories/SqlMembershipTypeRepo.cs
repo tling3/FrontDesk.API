@@ -19,5 +19,10 @@ namespace FrontDesk.API.Data.Repositories
         {
             return _context.MembershipType.ToListAsync();
         }
+
+        public Task<MembershipType> GetMembershipTypeById(int id)
+        {
+            return _context.MembershipType.FirstOrDefaultAsync(m => m.Id == id);
+        }
     }
 }

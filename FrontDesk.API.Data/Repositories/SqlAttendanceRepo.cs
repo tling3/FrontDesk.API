@@ -3,6 +3,7 @@ using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
@@ -18,6 +19,12 @@ namespace FrontDesk.API.Data.Repositories
         public Task<List<Attendance>> GetAllAttendance()
         {
             return _context.Attendance.ToListAsync();
+        }
+        public Task<List<Attendance>> GetAttendanceByMemberId(int id)
+        {
+            return _context.Attendance
+                .Where(a => a.MemberId == id)
+                .ToListAsync();
         }
     }
 }

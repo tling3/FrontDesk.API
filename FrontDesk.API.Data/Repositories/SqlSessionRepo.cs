@@ -18,5 +18,10 @@ namespace FrontDesk.API.Data.Repositories
         {
             return _context.Session.ToListAsync();
         }
+
+        public Task<Session> GetSessionById(int id)
+        {
+            return _context.Session.FirstOrDefaultAsync(s => s.Id == id);
+        }
     }
 }
