@@ -19,5 +19,10 @@ namespace FrontDesk.API.Data.Repositories
         {
             return await _context.Weekday.ToListAsync();
         }
+
+        public async Task<Weekday> GetWeekdayById(int id)
+        {
+            return await _context.Weekday.FirstOrDefaultAsync(w => w.Id == id);
+        }
     }
 }
