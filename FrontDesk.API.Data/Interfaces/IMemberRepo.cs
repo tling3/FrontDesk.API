@@ -8,5 +8,7 @@ namespace FrontDesk.API.Data.Interfaces
     {
         Task<List<Member>> GetAllMembers();
         Task<Member> GetMemberById(int id);
+
+        Task InsertMember(Member member);
     }
 }
