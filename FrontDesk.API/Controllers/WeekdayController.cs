@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -25,19 +26,31 @@ namespace FrontDesk.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<WeekdayReadDto>>> GetAllWeekdays()
         {
-            var weekdayItems = await _repository.GetAllWeekdays();
-            return Ok(_mapper.Map<IEnumerable<WeekdayReadDto>>(weekdayItems));
+            var weekdayModels = await _repository.GetAllWeekdays();
+            return Ok(_mapper.Map<IEnumerable<WeekdayReadDto>>(weekdayModels));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetWeekdayById")]
         public async Task<ActionResult<WeekdayReadDto>> GetWeekdayById(int id)
         {
-            var weekdayItem = await _repository.GetWeekdayById(id);
-            if (weekdayItem == null)
+            var weekdayModel = await _repository.GetWeekdayById(id);
+            if (weekdayModel == null)
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<WeekdayReadDto>(weekdayItem));
+            return Ok(_mapper.Map<WeekdayReadDto>(weekdayModel));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<WeekdayReadDto>> InsertWeekday(WeekdayInsertDto weekdayInsertDto)
+        {
+            //  TODO: add validation of dto model
+            var weekdayModel = _mapper.Map<Weekday>(weekdayInsertDto);
+            await _repository.InsertWeekday(weekdayModel);
+            _repository.SaveChanges();
+
+            var weekdayReadDto = _mapper.Map<WeekdayReadDto>(weekdayModel);
+            return CreatedAtRoute(nameof(GetWeekdayById), new { Id = weekdayReadDto.Id }, weekdayReadDto);
         }
     }
 }

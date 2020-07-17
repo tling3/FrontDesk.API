@@ -14,9 +14,9 @@ namespace FrontDesk.API.Models.DTOs
         [Required]
         public string Instructor { get; set; }
         [Required]
-        public TimeSpan StartTime { get; set; }
+        public DateTime StartTime { get; set; }
         [Required]
-        public TimeSpan EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         [Required]
         public int WeekdayId { get; set; }
         [Required]

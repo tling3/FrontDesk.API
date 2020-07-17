@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FrontDesk.API.Models.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class SessionInsert
+    public class SessionInsert : BaseDomain
     {
         [Required]
         public string AgeLevel { get; set; }
@@ -14,9 +15,9 @@ namespace FrontDesk.API.Models.Domain
         [Required]
         public string Instructor { get; set; }
         [Required]
-        public TimeSpan StartTime { get; set; }
+        public DateTime StartTime { get; set; }
         [Required]
-        public TimeSpan EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         [Required]
         public int WeekdayId { get; set; }
         [Required]

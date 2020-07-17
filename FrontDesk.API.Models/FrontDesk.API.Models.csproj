@@ -43,6 +43,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseDomain.cs" />
     <Compile Include="Domain\Attendance.cs" />
     <Compile Include="Domain\AttendanceInsert.cs" />
     <Compile Include="Domain\AttendanceUpdate.cs" />
