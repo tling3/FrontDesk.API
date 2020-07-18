@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -25,19 +26,31 @@ namespace FrontDesk.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetAllSessions()
         {
-            var sessionItems = await _repository.GetAllSessions();
-            return Ok(_mapper.Map<IEnumerable<SessionReadDto>>(sessionItems));
+            var sessionModels = await _repository.GetAllSessions();
+            return Ok(_mapper.Map<IEnumerable<SessionReadDto>>(sessionModels));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetSessionById")]
         public async Task<ActionResult<SessionReadDto>> GetSessionById(int id)
         {
-            var sessionItem = await _repository.GetSessionById(id);
-            if (sessionItem == null)
+            var sessionModel = await _repository.GetSessionById(id);
+            if (sessionModel == null)
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<SessionReadDto>(sessionItem));
+            return Ok(_mapper.Map<SessionReadDto>(sessionModel));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<SessionReadDto>> InsertSession(SessionInsertDto sessionInsertDto)
+        {
+            //  TODO: add validation of dto model
+            var sessionModel = _mapper.Map<Session>(sessionInsertDto);
+            await _repository.InsertSession(sessionModel);
+            _repository.SaveChanges();
+
+            var sessionReadDto = _mapper.Map<SessionReadDto>(sessionModel);
+            return CreatedAtRoute(nameof(GetSessionById), new { Id = sessionReadDto.Id }, sessionReadDto);
         }
     }
 }

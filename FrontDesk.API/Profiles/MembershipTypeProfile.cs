@@ -9,6 +9,7 @@ namespace FrontDesk.API.Profiles
         public MembershipTypeProfile()
         {
             CreateMap<MembershipType, MembershipTypeReadDto>();
+            CreateMap<MembershipTypeInsertDto, MembershipType>();
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FrontDesk.API.Models.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class MemberInsert
+    public class MemberInsert : BaseDomain
     {
         [Required]
         public string FirstName { get; set; }

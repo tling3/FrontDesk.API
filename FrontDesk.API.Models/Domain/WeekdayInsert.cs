@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FrontDesk.API.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class WeekdayInsert
+    public class WeekdayInsert : BaseDomain
     {
         [Required]
         public int Id { get; set; }
