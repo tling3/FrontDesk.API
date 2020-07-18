@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -26,19 +27,31 @@ namespace FrontDesk.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberReadDto>>> GetAllMembers()
         {
-            var memberItems = await _repository.GetAllMembers();
-            return Ok(_mapper.Map<IEnumerable<MemberReadDto>>(memberItems));
+            var memberModels = await _repository.GetAllMembers();
+            return Ok(_mapper.Map<IEnumerable<MemberReadDto>>(memberModels));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetMemberById")]
         public async Task<ActionResult<MemberReadDto>> GetMemberById(int id)
         {
-            var memberItem = await _repository.GetMemberById(id);
-            if (memberItem == null)
+            var memberModel = await _repository.GetMemberById(id);
+            if (memberModel == null)
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<MemberReadDto>(memberItem));
+            return Ok(_mapper.Map<MemberReadDto>(memberModel));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<MemberReadDto>> MemberInsert(MemberInsertDto memberInsertDto)
+        {
+            //  TODO: add validation of dto model
+            var memberModel = _mapper.Map<Member>(memberInsertDto);
+            await _repository.InsertMember(memberModel);
+            _repository.SaveChanges();
+
+            var memberReadDto = _mapper.Map<MemberReadDto>(memberModel);
+            return CreatedAtRoute(nameof(GetMemberById), new { Id = memberReadDto.Id }, memberReadDto);
         }
     }
 }
