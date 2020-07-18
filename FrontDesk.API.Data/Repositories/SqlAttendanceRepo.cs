@@ -44,5 +44,10 @@ namespace FrontDesk.API.Data.Repositories
             }
             await _context.Attendance.AddAsync(attendance);
         }
+
+        public void UpdateAttendance(Attendance attendance)
+        {
+            // no necessary work right now
+        }
     }
 }
