@@ -36,5 +36,10 @@ namespace FrontDesk.API.Data.Repositories
             }
             await _context.AddAsync(session);
         }
+
+        public void UpdateSession(Session session)
+        {
+            // no necessary work right now
+        }
     }
 }

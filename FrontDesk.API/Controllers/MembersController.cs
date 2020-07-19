@@ -10,7 +10,6 @@ namespace FrontDesk.API.Controllers
 {
     [Route("api/member")]
     [ApiController]
-
     public class MembersController : ControllerBase
     {
         private readonly IMemberRepo _repository;

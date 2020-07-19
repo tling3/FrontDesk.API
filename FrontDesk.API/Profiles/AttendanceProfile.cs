@@ -10,7 +10,6 @@ namespace FrontDesk.API.Profiles
         {
             CreateMap<Attendance, AttendanceReadDto>();
             CreateMap<AttendanceInsertDto, Attendance>();
-            CreateMap<AttendanceUpdateDto, Attendance>();
         }
     }
 }

@@ -36,5 +36,10 @@ namespace FrontDesk.API.Data.Repositories
             }
             await _context.Weekday.AddAsync(weekdayInsertModel);
         }
+
+        public void UpdateWeekday(Weekday weekday)
+        {
+            // no necessary work right now
+        }
     }
 }

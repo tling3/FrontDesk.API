@@ -10,7 +10,7 @@ namespace FrontDesk.API.Controllers
 {
     [Route("api/attendance")]
     [ApiController]
-
+    // TODO: add UpdateByMemberId and not just UpdateById - this could be better served as a patch
     public class AttendanceController : ControllerBase
     {
         private readonly IAttendanceRepo _repository;

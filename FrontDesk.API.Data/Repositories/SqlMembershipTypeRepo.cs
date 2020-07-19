@@ -36,5 +36,10 @@ namespace FrontDesk.API.Data.Repositories
             }
             await _context.MembershipType.AddAsync(membershipType);
         }
+
+        public void UpdateMembershipType(MembershipType membershipType)
+        {
+            // no necessary work right now
+        }
     }
 }
