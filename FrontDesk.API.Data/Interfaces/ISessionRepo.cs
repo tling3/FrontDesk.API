@@ -10,5 +10,6 @@ namespace FrontDesk.API.Data.Interfaces
         Task<List<Session>> GetAllSessions();
         Task<Session> GetSessionById(int id);
         Task InsertSession(Session session);
+        void UpdateSession(Session session);
     }
 }

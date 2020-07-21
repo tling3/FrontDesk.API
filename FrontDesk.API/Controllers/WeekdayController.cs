@@ -52,5 +52,24 @@ namespace FrontDesk.API.Controllers
             var weekdayReadDto = _mapper.Map<WeekdayReadDto>(weekdayModel);
             return CreatedAtRoute(nameof(GetWeekdayById), new { Id = weekdayReadDto.Id }, weekdayReadDto);
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateWeekday(int id, WeekdayUpdateDto weekdayReadDto)
+        {
+            //  TODO: add validation of dto model
+            var weekdayModel = await _repository.GetWeekdayById(id);
+
+            if (weekdayReadDto == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(weekdayReadDto, weekdayModel);
+            _repository.UpdateWeekday(weekdayModel);
+            _repository.SaveChanges();
+
+            //  TODO: Change status code
+            return NoContent();
+        }
     }
 }

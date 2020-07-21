@@ -10,7 +10,7 @@ namespace FrontDesk.API.Controllers
 {
     [Route("api/attendance")]
     [ApiController]
-
+    // TODO: add UpdateByMemberId and not just UpdateById - this could be better served as a patch
     public class AttendanceController : ControllerBase
     {
         private readonly IAttendanceRepo _repository;
@@ -63,6 +63,24 @@ namespace FrontDesk.API.Controllers
 
             var attendanceReadDto = _mapper.Map<AttendanceReadDto>(attendanceModel);
             return CreatedAtRoute(nameof(GetAttendanceById), new { Id = attendanceReadDto.Id }, attendanceReadDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateAttendance(int id, AttendanceUpdateDto attendanceUpdateDto)
+        {
+            //  TODO: add validation of dto model
+            var attendanceModel = await _repository.GetAttendanceById(id);
+            if (attendanceModel == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(attendanceUpdateDto, attendanceModel);
+            _repository.UpdateAttendance(attendanceModel);
+            _repository.SaveChanges();
+
+            //  TODO: Change status code
+            return NoContent();
         }
     }
 }

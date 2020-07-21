@@ -11,5 +11,6 @@ namespace FrontDesk.API.Data.Interfaces
         Task<List<MembershipType>> GetAllMembershipTypes();
         Task<MembershipType> GetMembershipTypeById(int id);
         Task InsertMembershipType(MembershipType membershipType);
+        void UpdateMembershipType(MembershipType membershipType);
     }
 }
