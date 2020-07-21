@@ -18,7 +18,7 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<Member>> GetAllMembers()
+        public async Task<IEnumerable<Member>> GetAllMembers()
         {
             return await _context.Member.ToListAsync();
         }

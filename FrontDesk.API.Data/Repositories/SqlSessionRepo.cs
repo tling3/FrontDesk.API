@@ -18,7 +18,7 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<Session>> GetAllSessions()
+        public async Task<IEnumerable<Session>> GetAllSessions()
         {
             return await _context.Session.ToListAsync();
         }

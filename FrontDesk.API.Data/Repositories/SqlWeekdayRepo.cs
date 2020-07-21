@@ -18,7 +18,7 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<Weekday>> GetAllWeekdays()
+        public async Task<IEnumerable<Weekday>> GetAllWeekdays()
         {
             return await _context.Weekday.ToListAsync();
         }

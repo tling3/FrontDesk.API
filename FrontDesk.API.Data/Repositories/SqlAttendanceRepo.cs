@@ -19,7 +19,7 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<Attendance>> GetAllAttendance()
+        public async Task<IEnumerable<Attendance>> GetAllAttendance()
         {
             return await _context.Attendance.ToListAsync();
         }

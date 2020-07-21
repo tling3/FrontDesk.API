@@ -42,7 +42,7 @@ namespace FrontDesk.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<MemberReadDto>> MemberInsert(MemberInsertDto memberInsertDto)
+        public async Task<ActionResult<MemberReadDto>> InsertMember(MemberInsertDto memberInsertDto)
         {
             //  TODO: add validation of dto model
             var memberModel = _mapper.Map<Member>(memberInsertDto);

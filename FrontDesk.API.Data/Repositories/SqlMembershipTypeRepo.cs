@@ -18,7 +18,7 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<List<MembershipType>> GetAllMembershipTypes()
+        public async Task<IEnumerable<MembershipType>> GetAllMembershipTypes()
         {
             return await _context.MembershipType.ToListAsync();
         }
