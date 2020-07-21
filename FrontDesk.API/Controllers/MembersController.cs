@@ -10,7 +10,6 @@ namespace FrontDesk.API.Controllers
 {
     [Route("api/member")]
     [ApiController]
-
     public class MembersController : ControllerBase
     {
         private readonly IMemberRepo _repository;
@@ -52,6 +51,24 @@ namespace FrontDesk.API.Controllers
 
             var memberReadDto = _mapper.Map<MemberReadDto>(memberModel);
             return CreatedAtRoute(nameof(GetMemberById), new { Id = memberReadDto.Id }, memberReadDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateMember(int id, MemberUpdateDto memberUpdateDto)
+        {
+            //  TODO: add validation of dto model
+            var memberModel = await _repository.GetMemberById(id);
+            if (memberModel == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(memberUpdateDto, memberModel);
+            _repository.UpdateMember(memberModel);
+            _repository.SaveChanges();
+
+            //  TODO: Change status code
+            return NoContent();
         }
     }
 }

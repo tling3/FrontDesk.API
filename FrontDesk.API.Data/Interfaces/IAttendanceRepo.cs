@@ -11,5 +11,6 @@ namespace FrontDesk.API.Data.Interfaces
         Task<List<Attendance>> GetAttendanceByMemberId(int id);
         Task<Attendance> GetAttendanceById(int id);
         Task InsertAttendance(Attendance attendance);
+        void UpdateAttendance(Attendance attendance);
     }
 }

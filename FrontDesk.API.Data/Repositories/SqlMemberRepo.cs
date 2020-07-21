@@ -36,5 +36,10 @@ namespace FrontDesk.API.Data.Repositories
             }
             await _context.Member.AddAsync(member);
         }
+
+        public void UpdateMember(Member memberModel)
+        {
+            // no necessary work right now
+        }
     }
 }

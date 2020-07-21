@@ -52,5 +52,23 @@ namespace FrontDesk.API.Controllers
             var membershipTypeReadDto = _mapper.Map<MembershipTypeReadDto>(membershipTypeModel);
             return CreatedAtRoute(nameof(GetMembershipTypeById), new { Id = membershipTypeReadDto.Id }, membershipTypeReadDto);
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateMembershipType(int id, MembershipTypeUpdateDto membershipTypeUpdateDto)
+        {
+            //  TODO: add validation of dto model
+            var membershipTypeModel = await _repository.GetMembershipTypeById(id);
+            if (membershipTypeModel == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(membershipTypeUpdateDto, membershipTypeModel);
+            _repository.UpdateMembershipType(membershipTypeModel);
+            _repository.SaveChanges();
+
+            //  TODO: Change status code
+            return NoContent();
+        }
     }
 }

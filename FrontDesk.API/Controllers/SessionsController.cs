@@ -52,5 +52,24 @@ namespace FrontDesk.API.Controllers
             var sessionReadDto = _mapper.Map<SessionReadDto>(sessionModel);
             return CreatedAtRoute(nameof(GetSessionById), new { Id = sessionReadDto.Id }, sessionReadDto);
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateSession(int id, SessionUpdateDto sessionUpdateDto)
+        {
+            //  TODO: add validation of dto model
+            var sessionModel = await _repository.GetSessionById(id);
+
+            if (sessionModel == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(sessionUpdateDto, sessionModel);
+            _repository.UpdateSession(sessionModel);
+            _repository.SaveChanges();
+
+            //  TODO: Change status code
+            return NoContent();
+        }
     }
 }
