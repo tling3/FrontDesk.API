@@ -60,3 +60,5 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.genruntimeconfig.cache
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
