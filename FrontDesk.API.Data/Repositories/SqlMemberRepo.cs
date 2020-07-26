@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
-    public class SqlMemberRepo : BaseRepo<MemberContext>, IMemberRepo
+    public class SqlMemberRepo : BaseRepo<FrontDeskContext>, IMemberRepo
     {
-        private readonly MemberContext _context;
+        private readonly FrontDeskContext _context;
 
-        public SqlMemberRepo(MemberContext context) : base(context)
+        public SqlMemberRepo(FrontDeskContext context) : base(context)
         {
             _context = context;
         }

@@ -41,11 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseRepo.cs" />
-    <Compile Include="Context\AttendanceContext.cs" />
-    <Compile Include="Context\MembershipTypeContext.cs" />
-    <Compile Include="Context\SessionContext.cs" />
-    <Compile Include="Context\MemberContext.cs" />
-    <Compile Include="Context\WeekdayContext.cs" />
+    <Compile Include="Context\FrontDeskContext.cs" />
     <Compile Include="Interfaces\IAttendanceRepo.cs" />
     <Compile Include="Interfaces\IMemberRepo.cs" />
     <Compile Include="Interfaces\IMembershipTypeRepo.cs" />

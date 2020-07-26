@@ -2,6 +2,7 @@
 using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -68,6 +69,30 @@ namespace FrontDesk.API.Controllers
             _repository.SaveChanges();
 
             //  TODO: Change status code
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> PartialUpdateMember(int id, JsonPatchDocument<MemberUpdateDto> patchDocument)
+        {
+            var memberModel = await _repository.GetMemberById(id);
+            if (memberModel == null)
+            {
+                return NotFound();
+            }
+
+            var memberToPatch = _mapper.Map<MemberUpdateDto>(memberModel);
+
+            patchDocument.ApplyTo(memberToPatch);
+            if (!TryValidateModel(memberToPatch))
+            {
+                return ValidationProblem();
+            }
+
+            _mapper.Map(memberToPatch, memberModel);
+            _repository.UpdateMember(memberModel);
+            _repository.SaveChanges();
+
             return NoContent();
         }
     }

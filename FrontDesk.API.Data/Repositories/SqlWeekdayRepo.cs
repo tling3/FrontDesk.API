@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
-    public class SqlWeekdayRepo : BaseRepo<WeekdayContext>, IWeekdayRepo
+    public class SqlWeekdayRepo : BaseRepo<FrontDeskContext>, IWeekdayRepo
     {
-        private readonly WeekdayContext _context;
+        private readonly FrontDeskContext _context;
 
-        public SqlWeekdayRepo(WeekdayContext context) : base(context)
+        public SqlWeekdayRepo(FrontDeskContext context) : base(context)
         {
             _context = context;
         }
