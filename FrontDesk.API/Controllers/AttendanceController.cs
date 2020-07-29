@@ -2,6 +2,7 @@
 using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace FrontDesk.API.Controllers
 {
     [Route("api/attendance")]
     [ApiController]
-    // TODO: add UpdateByMemberId and not just UpdateById - this could be better served as a patch
     public class AttendanceController : ControllerBase
     {
         private readonly IAttendanceRepo _repository;
@@ -80,6 +80,30 @@ namespace FrontDesk.API.Controllers
             _repository.SaveChanges();
 
             //  TODO: Change status code
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> PartialUpdateAttendance(int id, JsonPatchDocument<AttendanceUpdateDto> patchDocument)
+        {
+            var attendanceModel = await _repository.GetAttendanceById(id);
+            if (attendanceModel == null)
+            {
+                return NotFound();
+            }
+
+            var attendanceToPatch = _mapper.Map<AttendanceUpdateDto>(attendanceModel);
+
+            patchDocument.ApplyTo(attendanceToPatch);
+            if (!TryValidateModel(attendanceToPatch))
+            {
+                return ValidationProblem();
+            }
+
+            _mapper.Map(attendanceToPatch, attendanceModel);
+            _repository.UpdateAttendance(attendanceModel);
+            _repository.SaveChanges();
+
             return NoContent();
         }
     }

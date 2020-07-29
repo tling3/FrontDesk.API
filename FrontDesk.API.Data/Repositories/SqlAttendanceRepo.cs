@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
-    public class SqlAttendanceRepo : BaseRepo<AttendanceContext>, IAttendanceRepo
+    public class SqlAttendanceRepo : BaseRepo<FrontDeskContext>, IAttendanceRepo
     {
-        private readonly AttendanceContext _context;
+        private readonly FrontDeskContext _context;
 
-        public SqlAttendanceRepo(AttendanceContext context) : base(context)
+        public SqlAttendanceRepo(FrontDeskContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<List<Attendance>> GetAllAttendance()
+        public async Task<IEnumerable<Attendance>> GetAllAttendance()
         {
             return await _context.Attendance.ToListAsync();
         }
