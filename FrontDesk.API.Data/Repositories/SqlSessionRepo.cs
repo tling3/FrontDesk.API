@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
-    public class SqlSessionRepo : BaseRepo<SessionContext>, ISessionRepo
+    public class SqlSessionRepo : BaseRepo<FrontDeskContext>, ISessionRepo
     {
-        private readonly SessionContext _context;
+        private readonly FrontDeskContext _context;
 
-        public SqlSessionRepo(SessionContext context) : base(context)
+        public SqlSessionRepo(FrontDeskContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<List<Session>> GetAllSessions()
+        public async Task<IEnumerable<Session>> GetAllSessions()
         {
             return await _context.Session.ToListAsync();
         }

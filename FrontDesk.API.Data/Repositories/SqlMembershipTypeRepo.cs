@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace FrontDesk.API.Data.Repositories
 {
-    public class SqlMembershipTypeRepo : BaseRepo<MembershipTypeContext>, IMembershipTypeRepo
+    public class SqlMembershipTypeRepo : BaseRepo<FrontDeskContext>, IMembershipTypeRepo
     {
-        private readonly MembershipTypeContext _context;
+        private readonly FrontDeskContext _context;
 
-        public SqlMembershipTypeRepo(MembershipTypeContext context) : base(context)
+        public SqlMembershipTypeRepo(FrontDeskContext context) : base(context)
         {
             _context = context;
         }
 
-        public async Task<List<MembershipType>> GetAllMembershipTypes()
+        public async Task<IEnumerable<MembershipType>> GetAllMembershipTypes()
         {
             return await _context.MembershipType.ToListAsync();
         }

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 using System;
 
 namespace FrontDesk.API
@@ -23,18 +24,15 @@ namespace FrontDesk.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MemberContext>(option => option.UseSqlServer
-                (Configuration.GetConnectionString("FrontDeskConnection")));
-            services.AddDbContext<SessionContext>(option => option.UseSqlServer
-                (Configuration.GetConnectionString("FrontDeskConnection")));
-            services.AddDbContext<AttendanceContext>(option => option.UseSqlServer
-                (Configuration.GetConnectionString("FrontDeskConnection")));
-            services.AddDbContext<WeekdayContext>(option => option.UseSqlServer
-                (Configuration.GetConnectionString("FrontDeskConnection")));
-            services.AddDbContext<MembershipTypeContext>(option => option.UseSqlServer
+            services.AddDbContext<FrontDeskContext>(option => option.UseSqlServer
                 (Configuration.GetConnectionString("FrontDeskConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s =>
+            {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+
+
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

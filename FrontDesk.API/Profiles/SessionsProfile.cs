@@ -10,6 +10,7 @@ namespace FrontDesk.API.Profiles
         {
             CreateMap<Session, SessionReadDto>();
             CreateMap<SessionInsertDto, Session>();
+            CreateMap<Session, SessionUpdateDto>();
         }
     }
 }

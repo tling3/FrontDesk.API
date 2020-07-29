@@ -2,6 +2,7 @@
 using FrontDesk.API.Data.Interfaces;
 using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -69,6 +70,30 @@ namespace FrontDesk.API.Controllers
             _repository.SaveChanges();
 
             //  TODO: Change status code
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> PartialUpdateWeekday(int id, JsonPatchDocument<WeekdayUpdateDto> patchDocument)
+        {
+            var weekdayModel = await _repository.GetWeekdayById(id);
+            if (weekdayModel == null)
+            {
+                return NotFound();
+            }
+
+            var weekdayToPatch = _mapper.Map<WeekdayUpdateDto>(weekdayModel);
+
+            patchDocument.ApplyTo(weekdayToPatch);
+            if (!TryValidateModel(weekdayToPatch))
+            {
+                return ValidationProblem();
+            }
+
+            _mapper.Map(weekdayToPatch, weekdayModel);
+            _repository.UpdateWeekday(weekdayModel);
+            _repository.SaveChanges();
+
             return NoContent();
         }
     }
