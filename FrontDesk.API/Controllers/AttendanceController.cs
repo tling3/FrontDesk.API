@@ -95,7 +95,6 @@ namespace FrontDesk.API.Controllers
             var attendanceToPatch = _mapper.Map<AttendanceUpdateDto>(attendanceModel);
 
             patchDocument.ApplyTo(attendanceToPatch);
-
             if (!TryValidateModel(attendanceToPatch))
             {
                 return ValidationProblem();

@@ -15,6 +15,5 @@ namespace FrontDesk.API.Data.Context
         public DbSet<MembershipType> MembershipType { get; set; }
         public DbSet<Session> Session { get; set; }
         public DbSet<Weekday> Weekday { get; set; }
-
     }
 }
