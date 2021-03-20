@@ -9,6 +9,8 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -29,6 +31,12 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
@@ -50,6 +58,7 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.Models.dll.config
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.csprojAssemblyReference.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.csproj.CoreCompileInputs.cache
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.MvcApplicationPartsAssemblyInfo.cs
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.MvcApplicationPartsAssemblyInfo.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.AssemblyInfoInputs.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.AssemblyInfo.cs
@@ -60,7 +69,5 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.genruntimeconfig.cache
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.xml
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.xml
