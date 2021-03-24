@@ -8,9 +8,9 @@ namespace FrontDesk.API.Profiles
     {
         public AttendanceProfile()
         {
-            CreateMap<Attendance, AttendanceReadDto>();
-            CreateMap<AttendanceInsertDto, Attendance>();
-            CreateMap<Attendance, AttendanceUpdateDto>();
+            CreateMap<AttendanceModel, AttendanceReadDto>();
+            CreateMap<AttendanceInsertDto, AttendanceModel>();
+            CreateMap<AttendanceModel, AttendanceUpdateDto>();
         }
     }
 }
