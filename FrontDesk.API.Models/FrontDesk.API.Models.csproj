@@ -47,10 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseDomain.cs" />
-    <Compile Include="Domain\Attendance.cs" />
-    <Compile Include="Domain\AttendanceInsert.cs" />
     <Compile Include="Domain\AttendanceModel.cs" />
-    <Compile Include="Domain\AttendanceUpdate.cs" />
     <Compile Include="Domain\MembershipType.cs" />
     <Compile Include="Domain\MembershipTypeInsert.cs" />
     <Compile Include="Domain\MembershipTypeUpdate.cs" />
