@@ -78,6 +78,8 @@ namespace FrontDesk.API
 
                 // Enables duplicate class names with different namespaces
                 c.CustomSchemaIds(x => x.FullName);
+
+                c.DocumentFilter<JsonPatchDocumentFilter>();
             });
         }
 

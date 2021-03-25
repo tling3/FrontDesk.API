@@ -7,10 +7,11 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IAttendanceRepo
     {
         bool SaveChanges();
-        Task<IEnumerable<Attendance>> GetAllAttendance();
-        Task<List<Attendance>> GetAttendanceByMemberId(int id);
-        Task<Attendance> GetAttendanceById(int id);
-        Task InsertAttendance(Attendance attendance);
-        void UpdateAttendance(Attendance attendance);
+        Task<IEnumerable<AttendanceModel>> GetAllAttendance();
+        Task<List<AttendanceModel>> GetAttendanceByMemberId(int id);
+        Task<AttendanceModel> GetAttendanceById(int id);
+        Task<bool> InsertAttendance(AttendanceModel attendance);
+        void UpdateAttendance(AttendanceModel attendance);
+        bool DeleteAttendanceById(AttendanceModel domainModel);
     }
 }

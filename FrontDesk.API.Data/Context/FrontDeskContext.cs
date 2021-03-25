@@ -9,8 +9,7 @@ namespace FrontDesk.API.Data.Context
         {
 
         }
-
-        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<AttendanceModel> Attendance { get; set; }
         public DbSet<Member> Member { get; set; }
         public DbSet<MembershipType> MembershipType { get; set; }
         public DbSet<Session> Session { get; set; }
