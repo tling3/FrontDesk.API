@@ -7,9 +7,10 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IMemberRepo
     {
         bool SaveChanges();
-        Task<IEnumerable<Member>> GetAllMembers();
-        Task<Member> GetMemberById(int id);
-        Task InsertMember(Member member);
-        void UpdateMember(Member memberModel);
+        Task<IEnumerable<MemberModel>> GetAllMembers();
+        Task<MemberModel> GetMemberById(int id);
+        Task<bool> InsertMember(MemberModel member);
+        void UpdateMember(MemberModel memberModel);
+        bool DeleteMember(MemberModel domainModel);
     }
 }
