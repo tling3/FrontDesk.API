@@ -18,28 +18,38 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<MembershipType>> GetAllMembershipTypes()
+        public async Task<IEnumerable<MembershipTypeModel>> GetAllMembershipTypes()
         {
             return await _context.MembershipType.ToListAsync();
         }
 
-        public async Task<MembershipType> GetMembershipTypeById(int id)
+        public async Task<MembershipTypeModel> GetMembershipTypeById(int id)
         {
             return await _context.MembershipType.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public async Task InsertMembershipType(MembershipType membershipType)
+        public async Task<bool> InsertMembershipType(MembershipTypeModel domainModel)
         {
-            if (membershipType == null)
-            {
-                throw new ArgumentNullException(nameof(membershipType));
-            }
-            await _context.MembershipType.AddAsync(membershipType);
+            if (domainModel == null)
+                throw new ArgumentNullException(nameof(domainModel));
+
+            await _context.MembershipType.AddAsync(domainModel);
+            return SaveChanges();
         }
 
-        public void UpdateMembershipType(MembershipType membershipType)
+        public void UpdateMembershipType(MembershipTypeModel membershipType)
         {
+            // intentionally left blank
             // no necessary work right now
+        }
+
+        public bool DeleteMembershipType(MembershipTypeModel domainModel)
+        {
+            if (domainModel == null)
+                throw new ArgumentNullException();
+
+            _context.Remove(domainModel);
+            return SaveChanges();
         }
     }
 }
