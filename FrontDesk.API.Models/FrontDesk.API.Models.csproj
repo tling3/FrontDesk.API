@@ -49,10 +49,7 @@
     <Compile Include="Base\BaseDomain.cs" />
     <Compile Include="Domain\AttendanceModel.cs" />
     <Compile Include="Domain\MemberModel.cs" />
-    <Compile Include="Domain\MembershipType.cs" />
-    <Compile Include="Domain\MembershipTypeInsert.cs" />
     <Compile Include="Domain\MembershipTypeModel.cs" />
-    <Compile Include="Domain\MembershipTypeUpdate.cs" />
     <Compile Include="Domain\Session.cs" />
     <Compile Include="Domain\SessionInsert.cs" />
     <Compile Include="Domain\SessionUpdate.cs" />
