@@ -7,9 +7,10 @@ namespace FrontDesk.API.Data.Interfaces
     public interface ISessionRepo
     {
         bool SaveChanges();
-        Task<IEnumerable<Session>> GetAllSessions();
-        Task<Session> GetSessionById(int id);
-        Task InsertSession(Session session);
-        void UpdateSession(Session session);
+        Task<IEnumerable<SessionModel>> GetAllSessions();
+        Task<SessionModel> GetSessionById(int id);
+        Task<bool> InsertSession(SessionModel session);
+        void UpdateSession(SessionModel session);
+        bool DeleteSession(SessionModel domainModel);
     }
 }
