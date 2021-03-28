@@ -50,9 +50,7 @@
     <Compile Include="Domain\AttendanceModel.cs" />
     <Compile Include="Domain\MemberModel.cs" />
     <Compile Include="Domain\MembershipTypeModel.cs" />
-    <Compile Include="Domain\Session.cs" />
-    <Compile Include="Domain\SessionInsert.cs" />
-    <Compile Include="Domain\SessionUpdate.cs" />
+    <Compile Include="Domain\SessionModel.cs" />
     <Compile Include="Domain\Weekday.cs" />
     <Compile Include="Domain\WeekdayInsert.cs" />
     <Compile Include="Domain\WeekdayUpdate.cs" />

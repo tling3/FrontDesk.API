@@ -12,7 +12,7 @@ namespace FrontDesk.API.Data.Context
         public DbSet<AttendanceModel> Attendance { get; set; }
         public DbSet<MemberModel> Member { get; set; }
         public DbSet<MembershipTypeModel> MembershipType { get; set; }
-        public DbSet<Session> Session { get; set; }
+        public DbSet<SessionModel> Session { get; set; }
         public DbSet<Weekday> Weekday { get; set; }
     }
 }
