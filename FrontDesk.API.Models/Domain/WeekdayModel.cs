@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class WeekdayInsert : BaseDomain
+    public class WeekdayModel : BaseDomain
     {
         [Required]
+        [Key]
         public int Id { get; set; }
         [Required]
         public string Weekday { get; set; }
