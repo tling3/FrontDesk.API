@@ -251,5 +251,66 @@
             <response code="500">Item failed to be deleted</response>
             <response code="204">Session item was successfully deleted</response>
         </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.GetAllWeekdays">
+            <summary>
+            Get all Weekday items
+            </summary>
+            <returns>All Weekday items</returns>
+            <response code="404">Item(s) not found</response>
+            <response code="200">Weekday items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.GetWeekdayById(System.Int32)">
+            <summary>
+            Get Weekday by id
+            </summary>
+            <param name="id"></param>
+            <returns>Weekday item</returns>
+            <response code="404">Item not found</response>
+            <response code="200">Weekday item successfully found </response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.InsertWeekday(FrontDesk.API.Models.DTOs.WeekdayInsertDto)">
+            <summary>
+            Insert Weekday item
+            </summary>
+            <param name="insertDto"></param>
+            <returns>Weekday item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Weekday item was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.UpdateWeekday(FrontDesk.API.Models.DTOs.WeekdayUpdateDto)">
+            <summary>
+            Update Weekday item
+            </summary>
+            <param name="id"></param>
+            <param name="updateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated not found</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Weekday item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.PatchWeekday(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.WeekdayUpdateDto})">
+            <summary>
+            Patch weekday item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Weekday item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.DeleteWeekday(System.Int32)">
+            <summary>
+            Deletes Weeday item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="404">Item to be deleted not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Weekday item was successfully deleted</response>
+        </member>
     </members>
 </doc>

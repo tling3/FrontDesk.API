@@ -53,6 +53,7 @@
     <Compile Include="Domain\SessionModel.cs" />
     <Compile Include="Domain\Weekday.cs" />
     <Compile Include="Domain\WeekdayInsert.cs" />
+    <Compile Include="Domain\WeekdayModel.cs" />
     <Compile Include="Domain\WeekdayUpdate.cs" />
     <Compile Include="DTOs\AttendanceInsertDto.cs" />
     <Compile Include="DTOs\AttendanceReadDto.cs" />
