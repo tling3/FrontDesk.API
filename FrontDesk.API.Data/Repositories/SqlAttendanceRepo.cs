@@ -19,35 +19,46 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Attendance>> GetAllAttendance()
+        public async Task<IEnumerable<AttendanceModel>> GetAllAttendance()
         {
             return await _context.Attendance.ToListAsync();
         }
 
-        public async Task<List<Attendance>> GetAttendanceByMemberId(int id)
+        public async Task<List<AttendanceModel>> GetAttendanceByMemberId(int id)
         {
             return await _context.Attendance
-                .Where(a => a.MemberId == id)
+                .Where(model => model.MemberId == id)
                 .ToListAsync();
         }
 
-        public async Task<Attendance> GetAttendanceById(int id)
+        public async Task<AttendanceModel> GetAttendanceById(int id)
         {
-            return await _context.Attendance.FirstOrDefaultAsync(a => a.Id == id);
+            return await _context.Attendance.FirstOrDefaultAsync(model => model.Id == id);
         }
 
-        public async Task InsertAttendance(Attendance attendance)
+        public async Task<bool> InsertAttendance(AttendanceModel attendance)
         {
             if (attendance == null)
-            {
                 throw new ArgumentNullException(nameof(attendance));
-            }
+
             await _context.Attendance.AddAsync(attendance);
+
+            return SaveChanges();
         }
 
-        public void UpdateAttendance(Attendance attendance)
+        public void UpdateAttendance(AttendanceModel attendance)
         {
+            // intentionally left blank
             // no necessary work right now
+        }
+
+        public bool DeleteAttendanceById(AttendanceModel domainModel)
+        {
+            if (domainModel == null)
+                throw new ArgumentNullException();
+
+            _context.Remove(domainModel);
+            return SaveChanges();
         }
     }
 }

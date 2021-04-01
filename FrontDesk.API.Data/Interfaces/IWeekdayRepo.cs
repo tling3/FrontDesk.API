@@ -7,9 +7,10 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IWeekdayRepo
     {
         bool SaveChanges();
-        Task<IEnumerable<Weekday>> GetAllWeekdays();
-        Task<Weekday> GetWeekdayById(int id);
-        Task InsertWeekday(Weekday weekdayInsertDto);
-        void UpdateWeekday(Weekday weekday);
+        Task<IEnumerable<WeekdayModel>> GetAllWeekdays();
+        Task<WeekdayModel> GetWeekdayById(int id);
+        Task<bool> InsertWeekday(WeekdayModel weekdayInsertDto);
+        void UpdateWeekday(WeekdayModel weekday);
+        bool DeleteWeekday(WeekdayModel domainModel);
     }
 }

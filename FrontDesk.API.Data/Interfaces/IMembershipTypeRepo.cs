@@ -7,9 +7,10 @@ namespace FrontDesk.API.Data.Interfaces
     public interface IMembershipTypeRepo
     {
         bool SaveChanges();
-        Task<IEnumerable<MembershipType>> GetAllMembershipTypes();
-        Task<MembershipType> GetMembershipTypeById(int id);
-        Task InsertMembershipType(MembershipType membershipType);
-        void UpdateMembershipType(MembershipType membershipType);
+        Task<IEnumerable<MembershipTypeModel>> GetAllMembershipTypes();
+        Task<MembershipTypeModel> GetMembershipTypeById(int id);
+        Task<bool> InsertMembershipType(MembershipTypeModel membershipType);
+        void UpdateMembershipType(MembershipTypeModel membershipType);
+        bool DeleteMembershipType(MembershipTypeModel domainModel);
     }
 }

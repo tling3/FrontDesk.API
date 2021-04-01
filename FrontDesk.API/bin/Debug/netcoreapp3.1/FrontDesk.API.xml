@@ -4,5 +4,313 @@
         <name>FrontDesk.API</name>
     </assembly>
     <members>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.GetAllAttendance">
+            <summary>
+            Gets all Attendance items
+            </summary>
+            <returns>All Attendance items</returns>
+            <response code="404">Items(s) not found</response>
+            <response code="200">Attendance items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.GetAttendanceByMemberId(System.Int32)">
+            <summary>
+            Gets all Attendance items by Member Id
+            </summary>
+            <param name="id"></param>
+            <returns>All Attendance items by Member Id</returns>
+            <response code="404">Item(s) not found</response>
+            <response code="200">Attendance items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.GetAttendanceById(System.Int32)">
+            <summary>
+            Get Attendance item by id
+            </summary>
+            <param name="id"></param>
+            <returns>Attendance item</returns>
+            <response code="404">Item not found</response>
+            <response code="200">Attendance item successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.InsertAttendance(FrontDesk.API.Models.DTOs.AttendanceInsertDto)">
+            <summary>
+            Insert Attendance item
+            </summary>
+            <param name="attendanceInsertDto"></param>
+            <returns>Attendance item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Attendance item  was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.UpdateAttendance(FrontDesk.API.Models.DTOs.AttendanceUpdateDto)">
+            <summary>
+            Update Attendance item
+            </summary>
+            <param name="attendanceUpdateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated not found</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Attendance item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.PatchAttendance(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.AttendanceUpdateDto})">
+            <summary>
+            Patches Attendance item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Attendance item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.AttendanceController.DeleteAttendanceById(System.Int32)">
+            <summary>
+            Deletes Attendance item by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="404">Item to be deleted is not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Attendance item was successfully deleted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.GetAllMembers">
+            <summary>
+            Get all Members items
+            </summary>
+            <returns></returns>
+            <response code="404">Item(s) not found</response>
+            <response code="200">Member items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.GetMemberById(System.Int32)">
+            <summary>
+            Get Members item by id
+            </summary>
+            <returns></returns>
+            <response code="404">Item not found</response>
+            <response code="200">Member item successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.InsertMember(FrontDesk.API.Models.DTOs.MemberInsertDto)">
+            <summary>
+            Insert Member item
+            </summary>
+            <param name="memberInsertDto"></param>
+            <returns>Member Item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Member item was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.UpdateMember(FrontDesk.API.Models.DTOs.MemberUpdateDto)">
+            <summary>
+            Update Member item
+            </summary>
+            <param name="updateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated not found</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Member item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.PatchMember(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.MemberUpdateDto})">
+            <summary>
+            Patches Member item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying the patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Member item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembersController.DeleteMember(System.Int32)">
+            <summary>
+            Deletes Member item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="404">Item to be deleted not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Member item was successfully deleted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.GetAllMembershipTypes">
+            <summary>
+            Get all Membership Type items
+            </summary>
+            <returns>All Membership Type items</returns>
+            <response code="404">Items not found</response>
+            <response code="200">Membership Type items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.GetMembershipTypeById(System.Int32)">
+            <summary>
+            Get Membership Type item
+            </summary>
+            <returns>Membership Type item</returns>
+            <response code="404">Item not found</response>
+            <response code="200">Membership Type item successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.InsertMembershipType(FrontDesk.API.Models.DTOs.MembershipTypeInsertDto)">
+            <summary>
+            Insert Membership Type item
+            </summary>
+            <param name="insertDto"></param>
+            <returns>Membership Type item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Membership Type item was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.UpdateMembershipType(FrontDesk.API.Models.DTOs.MembershipTypeUpdateDto)">
+            <summary>
+            Updates Membership Type item
+            </summary>
+            <param name="updateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated not found</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Membership Type item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.PatchMembershipType(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.MembershipTypeUpdateDto})">
+            <summary>
+            Patches Membership Type item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Membership Type item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.MembershipTypeController.DeleteMembershipType(System.Int32)">
+            <summary>
+            Deletes Membership Type item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="400">Item to be deleted not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Membership Type item was successfully deleted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.GetAllSessions">
+            <summary>
+            Gets all Session items
+            </summary>
+            <returns>All Session items</returns>
+            <response code="404">Items not found</response>
+            <response code="200">Sessions items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.GetSessionById(System.Int32)">
+            <summary>
+            Get Session by id
+            </summary>
+            <param name="id"></param>
+            <returns>Session item</returns>
+            <response code="404">Item not found</response>
+            <response code="200">Sessions item successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.InsertSession(FrontDesk.API.Models.DTOs.SessionInsertDto)">
+            <summary>
+            Inserts Sessions item
+            </summary>
+            <param name="insertDto"></param>
+            <returns>Sessions item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Sessions item was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.UpdateSession(FrontDesk.API.Models.DTOs.SessionUpdateDto)">
+            <summary>
+            Updates Sessions item
+            </summary>
+            <param name="updateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated is not valid</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Sessions item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.PatchSession(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.SessionUpdateDto})">
+            <summary>
+            Patches Session item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying the patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Sessions item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.SessionsController.DeleteSession(System.Int32)">
+            <summary>
+            Delete Session item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="400">Item to be deleted not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Session item was successfully deleted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.GetAllWeekdays">
+            <summary>
+            Get all Weekday items
+            </summary>
+            <returns>All Weekday items</returns>
+            <response code="404">Item(s) not found</response>
+            <response code="200">Weekday items successfully found</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.GetWeekdayById(System.Int32)">
+            <summary>
+            Get Weekday by id
+            </summary>
+            <param name="id"></param>
+            <returns>Weekday item</returns>
+            <response code="404">Item not found</response>
+            <response code="200">Weekday item successfully found </response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.InsertWeekday(FrontDesk.API.Models.DTOs.WeekdayInsertDto)">
+            <summary>
+            Insert Weekday item
+            </summary>
+            <param name="insertDto"></param>
+            <returns>Weekday item</returns>
+            <response code="400">Item to be inserted is not valid</response>
+            <response code="500">Item failed to be inserted</response>
+            <response code="201">Weekday item was successfully inserted</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.UpdateWeekday(FrontDesk.API.Models.DTOs.WeekdayUpdateDto)">
+            <summary>
+            Update Weekday item
+            </summary>
+            <param name="id"></param>
+            <param name="updateDto"></param>
+            <returns></returns>
+            <response code="400">Updated item is not valid</response>
+            <response code="404">Item to be updated not found</response>
+            <response code="500">Item failed to be updated</response>
+            <response code="204">Weekday item was successfully updated</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.PatchWeekday(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FrontDesk.API.Models.DTOs.WeekdayUpdateDto})">
+            <summary>
+            Patch weekday item
+            </summary>
+            <param name="id"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+            <response code="404">Item to be patched not found</response>
+            <response code="400">Item failed validation after applying patch</response>
+            <response code="500">Item failed to be patched</response>
+            <response code="204">Weekday item was successfully patched</response>
+        </member>
+        <member name="M:FrontDesk.API.Controllers.WeekdayController.DeleteWeekday(System.Int32)">
+            <summary>
+            Deletes Weeday item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="404">Item to be deleted not found</response>
+            <response code="500">Item failed to be deleted</response>
+            <response code="204">Weekday item was successfully deleted</response>
+        </member>
     </members>
 </doc>
