@@ -7,6 +7,7 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.runtimeconfig.dev.json
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.pdb
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
@@ -67,7 +68,6 @@ E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcorea
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\staticwebassets\FrontDesk.API.StaticWebAssets.Manifest.cache
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\staticwebassets\FrontDesk.API.StaticWebAssets.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.dll
+E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.xml
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.pdb
 E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.genruntimeconfig.cache
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\bin\Debug\netcoreapp3.1\FrontDesk.API.xml
-E:\Documents\Programming\Projects\FrontDesk-API\FrontDesk.API\obj\Debug\netcoreapp3.1\FrontDesk.API.xml
