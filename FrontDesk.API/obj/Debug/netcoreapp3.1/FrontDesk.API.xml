@@ -195,7 +195,7 @@
             <summary>
             Gets all Session items
             </summary>
-            <returns>All Session items</returns>
+            <returns>All Sessions that are scheduled for today that have not ended</returns>
             <response code="404">Items not found</response>
             <response code="200">Sessions items successfully found</response>
         </member>
