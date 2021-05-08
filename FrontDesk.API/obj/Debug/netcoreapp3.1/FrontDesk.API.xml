@@ -191,11 +191,11 @@
             <response code="500">Item failed to be deleted</response>
             <response code="204">Membership Type item was successfully deleted</response>
         </member>
-        <member name="M:FrontDesk.API.Controllers.SessionsController.GetAllSessions">
+        <member name="M:FrontDesk.API.Controllers.SessionsController.GetRemainingSessions">
             <summary>
-            Gets all Session items
+            Gets all Sessions for today that have not ended
             </summary>
-            <returns>All Session items</returns>
+            <returns>All Sessions for today that have not ended</returns>
             <response code="404">Items not found</response>
             <response code="200">Sessions items successfully found</response>
         </member>
