@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class MemberInsert : BaseDomain
+    public class MemberModel : BaseDomain
     {
+        [Key]
+        public int Id { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

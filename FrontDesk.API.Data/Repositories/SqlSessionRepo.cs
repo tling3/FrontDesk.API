@@ -18,28 +18,38 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Session>> GetAllSessions()
+        public async Task<IEnumerable<SessionModel>> GetAllSessions()
         {
             return await _context.Session.ToListAsync();
         }
 
-        public async Task<Session> GetSessionById(int id)
+        public async Task<SessionModel> GetSessionById(int id)
         {
             return await _context.Session.FirstOrDefaultAsync(s => s.Id == id);
         }
 
-        public async Task InsertSession(Session session)
+        public async Task<bool> InsertSession(SessionModel session)
         {
             if (session == null)
-            {
                 throw new ArgumentNullException(nameof(session));
-            }
+
             await _context.AddAsync(session);
+            return SaveChanges();
         }
 
-        public void UpdateSession(Session session)
+        public void UpdateSession(SessionModel session)
         {
+            // intentionally left blank
             // no necessary work right now
+        }
+
+        public bool DeleteSession(SessionModel domainModel)
+        {
+            if (domainModel == null)
+                throw new ArgumentNullException();
+
+            _context.Remove(domainModel);
+            return SaveChanges();
         }
     }
 }

@@ -8,9 +8,9 @@ namespace FrontDesk.API.Profiles
     {
         public WeekdayProfile()
         {
-            CreateMap<Weekday, WeekdayReadDto>();
-            CreateMap<WeekdayInsertDto, Weekday>();
-            CreateMap<Weekday, WeekdayUpdateDto>();
+            CreateMap<WeekdayModel, WeekdayReadDto>();
+            CreateMap<WeekdayInsertDto, WeekdayModel>();
+            CreateMap<WeekdayModel, WeekdayUpdateDto>();
         }
     }
 }

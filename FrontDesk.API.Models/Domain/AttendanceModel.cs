@@ -1,14 +1,17 @@
 ﻿using FrontDesk.API.Models.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class WeekdayInsert : BaseDomain
+    public class AttendanceModel : BaseDomain
     {
-        [Required]
+        [Key]
         public int Id { get; set; }
         [Required]
-        public string Weekday { get; set; }
+        public int MemberId { get; set; }
+        [Required]
+        public DateTime SessionDate { get; set; }
         [Required]
         public string ModifiedBy { get; set; }
     }

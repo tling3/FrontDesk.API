@@ -31,6 +31,15 @@ namespace FrontDesk.API
             services.AddDbContext<FrontDeskContext>(option => option.UseSqlServer
                 (Configuration.GetConnectionString("FrontDeskConnection")));
 
+            services.AddCors(options => {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
+
             services.AddControllers().AddNewtonsoftJson(s =>
             {
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -78,6 +87,8 @@ namespace FrontDesk.API
 
                 // Enables duplicate class names with different namespaces
                 c.CustomSchemaIds(x => x.FullName);
+
+                c.DocumentFilter<JsonPatchDocumentFilter>();
             });
         }
 
@@ -96,9 +107,8 @@ namespace FrontDesk.API
             });
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

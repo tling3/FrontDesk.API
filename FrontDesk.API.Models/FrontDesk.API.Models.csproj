@@ -47,21 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseDomain.cs" />
-    <Compile Include="Domain\Attendance.cs" />
-    <Compile Include="Domain\AttendanceInsert.cs" />
-    <Compile Include="Domain\AttendanceUpdate.cs" />
-    <Compile Include="Domain\MembershipType.cs" />
-    <Compile Include="Domain\MembershipTypeInsert.cs" />
-    <Compile Include="Domain\MembershipTypeUpdate.cs" />
-    <Compile Include="Domain\Session.cs" />
-    <Compile Include="Domain\SessionInsert.cs" />
-    <Compile Include="Domain\SessionUpdate.cs" />
-    <Compile Include="Domain\Member.cs" />
-    <Compile Include="Domain\MemberInsert.cs" />
-    <Compile Include="Domain\MemberUpdate.cs" />
-    <Compile Include="Domain\Weekday.cs" />
-    <Compile Include="Domain\WeekdayInsert.cs" />
-    <Compile Include="Domain\WeekdayUpdate.cs" />
+    <Compile Include="Domain\AttendanceModel.cs" />
+    <Compile Include="Domain\MemberModel.cs" />
+    <Compile Include="Domain\MembershipTypeModel.cs" />
+    <Compile Include="Domain\SessionModel.cs" />
+    <Compile Include="Domain\WeekdayModel.cs" />
     <Compile Include="DTOs\AttendanceInsertDto.cs" />
     <Compile Include="DTOs\AttendanceReadDto.cs" />
     <Compile Include="DTOs\AttendanceUpdateDto.cs" />

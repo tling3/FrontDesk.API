@@ -3,12 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FrontDesk.API.Models.Domain
 {
-    public class MembershipTypeInsert : BaseDomain
+    public class WeekdayModel : BaseDomain
     {
         [Required]
-        public string MembershipType { get; set; }
+        [Key]
+        public int Id { get; set; }
         [Required]
-        public int SessionsPerMonth { get; set; }
+        public string Weekday { get; set; }
         [Required]
         public string ModifiedBy { get; set; }
     }
