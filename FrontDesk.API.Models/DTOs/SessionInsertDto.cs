@@ -18,7 +18,7 @@ namespace FrontDesk.API.Models.DTOs
         [Required]
         public DateTime EndTime { get; set; }
         [Required]
-        public int WeekdayId { get; set; }
+        public string Weekday { get; set; }
         [Required]
         public string ModifiedBy { get; set; }
     }

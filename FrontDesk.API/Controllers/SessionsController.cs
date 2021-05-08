@@ -5,8 +5,11 @@ using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+#pragma warning disable 1591
 
 namespace FrontDesk.API.Controllers
 {
@@ -26,20 +29,26 @@ namespace FrontDesk.API.Controllers
         }
 
         /// <summary>
-        /// Gets all Session items
+        /// Gets all Sessions for today that have not ended
         /// </summary>
-        /// <returns>All Session items</returns>
+        /// <returns>All Sessions for today that have not ended</returns>
         /// <response code="404">Items not found</response>
         /// <response code="200">Sessions items successfully found</response>
         //  GET ALL: api/session
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetAllSessions()
+        public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetRemainingSessions()
         {
             IEnumerable<SessionModel> domainModels = await _repository.GetAllSessions();
             if (domainModels == null)
                 return NotFound();
 
-            return Ok(_mapper.Map<IEnumerable<SessionReadDto>>(domainModels));
+            IEnumerable<SessionReadDto> readDtos = GetWeekdayCustomMapper().Map<IEnumerable<SessionReadDto>>(domainModels);
+
+            TimeSpan currentTime = DateTime.Now.TimeOfDay;
+            string currentDay = DateTime.Now.DayOfWeek.ToString();
+            readDtos = readDtos.Where(dto => dto.Weekday == currentDay && dto.EndTime.TimeOfDay >= currentTime).ToList();
+
+            return Ok(readDtos);
         }
 
         /// <summary>
@@ -57,7 +66,7 @@ namespace FrontDesk.API.Controllers
             if (domainModel == null)
                 return NotFound();
 
-            return Ok(_mapper.Map<SessionReadDto>(domainModel));
+            return Ok(GetWeekdayCustomMapper().Map<SessionReadDto>(domainModel));
         }
 
         /// <summary>
@@ -77,12 +86,14 @@ namespace FrontDesk.API.Controllers
                 return BadRequest();
 
             SessionModel domainModel = _mapper.Map<SessionModel>(insertDto);
+            domainModel.WeekdayId = (int)(Weekdays)Enum.Parse(typeof(Weekdays), insertDto.Weekday, true);
 
             bool isSuccessful = await _repository.InsertSession(domainModel);
             if (!isSuccessful)
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
-            SessionReadDto readDto = _mapper.Map<SessionReadDto>(domainModel);
+            SessionReadDto readDto = GetWeekdayCustomMapper().Map<SessionReadDto>(domainModel);
+
             return CreatedAtRoute(nameof(GetSessionById), new { id = readDto.Id }, readDto);
         }
 
@@ -104,12 +115,13 @@ namespace FrontDesk.API.Controllers
                 return BadRequest();
 
             SessionModel domainModel = await _repository.GetSessionById(updateDto.Id);
-
             if (domainModel == null)
                 return NotFound();
 
             _mapper.Map(updateDto, domainModel);
+            domainModel.WeekdayId = (int)(Weekdays)Enum.Parse(typeof(Weekdays), updateDto.Weekday, true);
             _repository.UpdateSession(domainModel);
+
             bool isSuccessful = _repository.SaveChanges();
             if (!isSuccessful)
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -136,13 +148,18 @@ namespace FrontDesk.API.Controllers
             if (sessionModel == null)
                 return NotFound();
 
-            SessionUpdateDto sessionToPatch = _mapper.Map<SessionUpdateDto>(sessionModel);
+            MapperConfiguration config = new MapperConfiguration(cfg => cfg.CreateMap<SessionModel, SessionUpdateDto>()
+                .ForMember(dto => dto.Weekday, opt => opt.MapFrom(src => Enum.GetName(typeof(Weekdays), src.WeekdayId))));
+            IMapper customMapper = new Mapper(config);
+            SessionUpdateDto sessionToPatch = customMapper.Map<SessionUpdateDto>(sessionModel);
 
             patchDocument.ApplyTo(sessionToPatch);
             if (!TryValidateModel(sessionToPatch))
                 return ValidationProblem();
 
             _mapper.Map(sessionToPatch, sessionModel);
+            sessionModel.WeekdayId = (int)(Weekdays)Enum.Parse(typeof(Weekdays), sessionToPatch.Weekday, true);
+
             _repository.UpdateSession(sessionModel);
             bool isSuccessful = _repository.SaveChanges();
             if (!isSuccessful)
@@ -174,5 +191,24 @@ namespace FrontDesk.API.Controllers
 
             return NoContent();
         }
+
+        private Mapper GetWeekdayCustomMapper()
+        {
+            MapperConfiguration config = new MapperConfiguration(cfg => cfg.CreateMap<SessionModel, SessionReadDto>()
+                .ForMember(dto => dto.Weekday, opt => opt.MapFrom(src => Enum.GetName(typeof(Weekdays), src.WeekdayId))));
+            return new Mapper(config);
+        }
+    }
+
+    public enum Weekdays
+    {
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6,
+        Sunday = 7
     }
 }
+#pragma warning restore 1591
