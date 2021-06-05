@@ -31,9 +31,14 @@ namespace FrontDesk.API.Data.Repositories
                 .ToListAsync();
         }
 
-        public async Task<AttendanceModel> GetAttendanceById(int id)
+        public async Task<AttendanceModel> GetAttendanceBySessionId(int sessionId)
         {
-            return await _context.Attendance.FirstOrDefaultAsync(model => model.Id == id);
+            return await _context.Attendance.FirstOrDefaultAsync(model => model.SessionId == sessionId);
+        }
+
+        public async Task<List<AttendanceModel>> GetAttendancePerSession(int sessionId, DateTime date)
+        {
+            return await _context.Attendance.Where(model => model.SessionId == sessionId && model.SessionDate == date).ToListAsync();
         }
 
         public async Task<bool> InsertAttendance(AttendanceModel attendance)

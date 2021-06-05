@@ -9,6 +9,8 @@ namespace FrontDesk.API.Models.Domain
         [Key]
         public int Id { get; set; }
         [Required]
+        public int SessionId { get; set; }
+        [Required]
         public int MemberId { get; set; }
         [Required]
         public DateTime SessionDate { get; set; }
