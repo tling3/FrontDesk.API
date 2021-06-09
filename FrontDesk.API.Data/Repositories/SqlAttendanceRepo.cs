@@ -1,8 +1,10 @@
 ﻿using FrontDesk.API.Data.Base;
 using FrontDesk.API.Data.Context;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Custom.Attendance;
 using FrontDesk.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +38,28 @@ namespace FrontDesk.API.Data.Repositories
             return await _context.Attendance.FirstOrDefaultAsync(model => model.SessionId == sessionId);
         }
 
-        public async Task<List<AttendanceModel>> GetAttendancePerSession(int sessionId, DateTime date)
+        public async Task<List<AttendancePerSessionDto>> GetAttendancePerSession(int sessionId, DateTime date)
         {
-            return await _context.Attendance.Where(model => model.SessionId == sessionId && model.SessionDate == date).ToListAsync();
+            List<AttendancePerSessionDto> attendancePerSession = await _context.Attendance
+                .Join(
+                    _context.Member,
+                    attendance => attendance.MemberId,
+                    member => member.Id,
+                    (attendance, member) => new AttendancePerSessionDto
+                    {
+                        Id = attendance.Id,
+                        SessionId = attendance.SessionId,
+                        MemberId = attendance.MemberId,
+                        SessionDate = attendance.SessionDate,
+                        FirstName = member.FirstName,
+                        LastName = member.LastName,
+                        Email = member.Email
+                    }
+                )
+                .Where(model => model.SessionId == sessionId && model.SessionDate == date)
+                .ToListAsync();
+
+            return attendancePerSession;
         }
 
         public async Task<bool> InsertAttendance(AttendanceModel attendance)

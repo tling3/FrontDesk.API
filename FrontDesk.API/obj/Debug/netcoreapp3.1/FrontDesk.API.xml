@@ -35,7 +35,6 @@
             Get Attendance per Session
             </summary>
             <param name="sessionId"></param>
-            <param name="memberId"></param>
             <param name="date"></param>
             <returns>List of Attendance Items</returns>
             <response code="400">Item(s) not found</response>

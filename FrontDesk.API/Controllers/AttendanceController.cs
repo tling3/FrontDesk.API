@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Custom.Attendance;
 using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Http;
@@ -85,20 +86,19 @@ namespace FrontDesk.API.Controllers
         /// Get Attendance per Session
         /// </summary>
         /// <param name="sessionId"></param>
-        /// <param name="memberId"></param>
         /// <param name="date"></param>
         /// <returns>List of Attendance Items</returns>
         /// <response code="400">Item(s) not found</response>
         /// <response code="200">Attendance item(s) successfully found</response>
         // GET: api/attendance/session/{sessionId}/{memberId}/{date}
-        [HttpGet("/session/{sessionId}/{date}")]
-        public async Task<ActionResult<List<AttendanceModel>>> GetAttendancePerSession(int sessionId, DateTime date)
+        [HttpGet("/api/attendance/session/{sessionId}/{date}")]
+        public async Task<ActionResult<List<AttendancePerSessionDto>>> GetAttendancePerSession(int sessionId, DateTime date)
         {
-            List<AttendanceModel> attendanceModels = await _repository.GetAttendancePerSession(sessionId, date);
+            List<AttendancePerSessionDto> attendanceModels = await _repository.GetAttendancePerSession(sessionId, date);
             if (attendanceModels == null)
                 return NotFound();
 
-            return Ok(_mapper.Map<List<AttendanceReadDto>>(attendanceModels));
+            return Ok(attendanceModels);
         }
 
         /// <summary>

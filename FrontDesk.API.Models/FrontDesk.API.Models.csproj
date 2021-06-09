@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseDomain.cs" />
+    <Compile Include="Custom\Attendance\AttendancePerSessionDto.cs" />
     <Compile Include="Domain\AttendanceModel.cs" />
     <Compile Include="Domain\MemberModel.cs" />
     <Compile Include="Domain\MembershipTypeModel.cs" />
