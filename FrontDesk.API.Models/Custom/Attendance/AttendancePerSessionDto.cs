@@ -1,10 +1,9 @@
-﻿using FrontDesk.API.Models.Base;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace FrontDesk.API.Models.Domain
+namespace FrontDesk.API.Models.Custom.Attendance
 {
-    public class AttendanceModel : BaseDomain
+    public class AttendancePerSessionDto
     {
         [Key]
         public int Id { get; set; }
@@ -15,6 +14,10 @@ namespace FrontDesk.API.Models.Domain
         [Required]
         public DateTime SessionDate { get; set; }
         [Required]
-        public string ModifiedBy { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        [Required]
+        public string Email { get; set; }
     }
 }

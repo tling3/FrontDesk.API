@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using FrontDesk.API.Data.Interfaces;
+using FrontDesk.API.Models.Custom.Attendance;
 using FrontDesk.API.Models.Domain;
 using FrontDesk.API.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -63,21 +65,40 @@ namespace FrontDesk.API.Controllers
         }
 
         /// <summary>
-        /// Get Attendance item by id
+        /// Get Attendance item by Session Id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <returns>Attendance item</returns>
         /// <response code="404">Item not found</response>
         /// <response code="200">Attendance item successfully found</response>
-        //  GET BY ID: api/attendance/{id}
-        [HttpGet("{id}", Name = nameof(GetAttendanceById))]
-        public async Task<ActionResult<AttendanceReadDto>> GetAttendanceById(int id)
+        //  GET BY ID: api/attendance/{sessionId}
+        [HttpGet("{sessionId}", Name = nameof(GetAttendanceBySessionId))]
+        public async Task<ActionResult<AttendanceReadDto>> GetAttendanceBySessionId(int sessionId)
         {
-            AttendanceModel attendanceModel = await _repository.GetAttendanceById(id);
+            AttendanceModel attendanceModel = await _repository.GetAttendanceBySessionId(sessionId);
             if (attendanceModel == null)
                 return NotFound();
 
             return Ok(_mapper.Map<AttendanceReadDto>(attendanceModel));
+        }
+
+        /// <summary>
+        /// Get Attendance per Session
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="date"></param>
+        /// <returns>List of Attendance Items</returns>
+        /// <response code="400">Item(s) not found</response>
+        /// <response code="200">Attendance item(s) successfully found</response>
+        // GET: api/attendance/session/{sessionId}/{memberId}/{date}
+        [HttpGet("/api/attendance/session/{sessionId}/{date}")]
+        public async Task<ActionResult<List<AttendancePerSessionDto>>> GetAttendancePerSession(int sessionId, DateTime date)
+        {
+            List<AttendancePerSessionDto> attendanceModels = await _repository.GetAttendancePerSession(sessionId, date);
+            if (attendanceModels == null)
+                return NotFound();
+
+            return Ok(attendanceModels);
         }
 
         /// <summary>
@@ -102,7 +123,7 @@ namespace FrontDesk.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             AttendanceReadDto attendanceReadDto = _mapper.Map<AttendanceReadDto>(attendanceModel);
-            return CreatedAtRoute(nameof(GetAttendanceById), new { id = attendanceReadDto.Id }, attendanceReadDto);
+            return CreatedAtRoute(nameof(GetAttendanceBySessionId), new { sessionId = attendanceReadDto.SessionId }, attendanceReadDto);
         }
 
         /// <summary>
@@ -114,15 +135,15 @@ namespace FrontDesk.API.Controllers
         /// <response code="404">Item to be updated not found</response>
         /// <response code="500">Item failed to be updated</response>
         /// <response code="204">Attendance item was successfully updated</response>
-        //  INSERT: api/attendance/{id}
-        [HttpPut("{id}")]
+        //  INSERT: api/attendance/{sessionId}
+        [HttpPut("{sessionId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult> UpdateAttendance(AttendanceUpdateDto attendanceUpdateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            AttendanceModel attendanceModel = await _repository.GetAttendanceById(attendanceUpdateDto.Id);
+            AttendanceModel attendanceModel = await _repository.GetAttendanceBySessionId(attendanceUpdateDto.SessionId);
             if (attendanceModel == null)
                 return NotFound();
 
@@ -146,12 +167,12 @@ namespace FrontDesk.API.Controllers
         /// <response code="400">Item failed validation after applying patch</response>
         /// <response code="500">Item failed to be patched</response>
         /// <response code="204">Attendance item was successfully patched</response>
-        //  PATCH: api/attendance/{id}
-        [HttpPatch("{id}")]
+        //  PATCH: api/attendance/{sessionId}
+        [HttpPatch("{sessionId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> PatchAttendance(int id, JsonPatchDocument<AttendanceUpdateDto> patchDocument)
+        public async Task<ActionResult> PatchAttendance(int sessionId, JsonPatchDocument<AttendanceUpdateDto> patchDocument)
         {
-            AttendanceModel attendanceModel = await _repository.GetAttendanceById(id);
+            AttendanceModel attendanceModel = await _repository.GetAttendanceBySessionId(sessionId);
             if (attendanceModel == null)
                 return NotFound();
 
@@ -172,19 +193,19 @@ namespace FrontDesk.API.Controllers
         }
 
         /// <summary>
-        /// Deletes Attendance item by id
+        /// Deletes Attendance item by Session Id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <returns></returns>
         /// <response code="404">Item to be deleted is not found</response>
         /// <response code="500">Item failed to be deleted</response>
         /// <response code="204">Attendance item was successfully deleted</response>
-        //  DELETE: api/attendance/{id}
-        [HttpDelete("{id}")]
+        //  DELETE: api/attendance/{sessionId}
+        [HttpDelete("{sessionId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> DeleteAttendanceById(int id)
+        public async Task<ActionResult> DeleteAttendanceById(int sessionId)
         {
-            AttendanceModel domainModel = await _repository.GetAttendanceById(id);
+            AttendanceModel domainModel = await _repository.GetAttendanceBySessionId(sessionId);
             if (domainModel == null)
                 return NotFound();
 
