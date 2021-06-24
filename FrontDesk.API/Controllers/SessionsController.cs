@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 #pragma warning disable 1591
 
@@ -43,9 +44,9 @@ namespace FrontDesk.API.Controllers
 
             IEnumerable<SessionReadDto> readDtos = GetWeekdayCustomMapper().Map<IEnumerable<SessionReadDto>>(domainModels);
 
-            //TimeSpan currentTime = DateTime.Now.TimeOfDay;
-            //string currentDay = DateTime.Now.DayOfWeek.ToString();
-            //readDtos = readDtos.Where(dto => dto.Weekday == currentDay && dto.EndTime.TimeOfDay >= currentTime).ToList();
+            TimeSpan currentTime = DateTime.Now.TimeOfDay;
+            string currentDay = DateTime.Now.DayOfWeek.ToString();
+            readDtos = readDtos.Where(dto => dto.Weekday == currentDay && dto.EndTime.TimeOfDay >= currentTime).ToList();
 
             return Ok(readDtos);
         }
