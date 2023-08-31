@@ -1,20 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {}
+    "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
-      "version": "1.0.0",
+    "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
+        "projectUniqueName": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
         "projectName": "FrontDesk.API.Data",
-        "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
+        "projectPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
-                "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj"
+              "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
+                "projectPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj"
               }
             }
           }
@@ -24,31 +23,32 @@
         "net472": {}
       }
     },
-    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
-      "version": "1.0.0",
+    "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj",
+        "projectUniqueName": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj",
         "projectName": "FrontDesk.API.Models",
-        "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj"
+        "projectPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Models\\FrontDesk.API.Models.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {
+    "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj",
+        "projectUniqueName": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj",
         "projectName": "FrontDesk.API",
-        "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj",
-        "packagesPath": "C:\\Users\\Timothy\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\obj\\",
+        "projectPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\FrontDesk.API.csproj",
+        "packagesPath": "C:\\Users\\tapou\\.nuget\\packages\\",
+        "outputPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Timothy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tapou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,9 +60,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
-                "projectPath": "E:\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj"
+              "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj": {
+                "projectPath": "C:\\Partition\\Files\\Documents\\Programming\\Projects\\FrontDesk-API\\FrontDesk.API.Data\\FrontDesk.API.Data.csproj"
               }
             }
           }
@@ -75,6 +76,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -125,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

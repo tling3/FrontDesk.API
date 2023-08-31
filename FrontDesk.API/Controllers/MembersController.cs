@@ -62,7 +62,7 @@ namespace FrontDesk.API.Controllers
         /// <summary>
         /// Insert Member item
         /// </summary>
-        /// <param name="memberInsertDto"></param>
+        /// <param name="insertDto"></param>
         /// <returns>Member Item</returns>
         /// <response code="400">Item to be inserted is not valid</response>
         /// <response code="500">Item failed to be inserted</response>

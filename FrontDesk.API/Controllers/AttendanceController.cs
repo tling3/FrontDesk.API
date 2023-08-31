@@ -160,7 +160,7 @@ namespace FrontDesk.API.Controllers
         /// <summary>
         /// Patches Attendance item
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
         /// <param name="patchDocument"></param>
         /// <returns></returns>
         /// <response code="404">Item to be patched not found</response>
