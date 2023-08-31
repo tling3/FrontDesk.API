@@ -18,17 +18,17 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<MemberModel>> GetAllMembers()
+        public async Task<IEnumerable<MemberModel>> GetAllMembersAsync()
         {
             return await _context.Member.ToListAsync();
         }
 
-        public async Task<MemberModel> GetMemberById(int id)
+        public async Task<MemberModel> GetMemberByIdAsync(int id)
         {
             return await _context.Member.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public async Task<bool> InsertMember(MemberModel member)
+        public async Task<bool> InsertMemberAsync(MemberModel member)
         {
             if (member == null)
                 throw new ArgumentNullException(nameof(member));

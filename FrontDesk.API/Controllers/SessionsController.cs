@@ -36,9 +36,9 @@ namespace FrontDesk.API.Controllers
         /// <response code="200">Sessions items successfully found</response>
         //  GET ALL: api/session
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetRemainingSessions()
+        public async Task<ActionResult<IEnumerable<SessionReadDto>>> GetRemainingSessionsAsync()
         {
-            IEnumerable<SessionModel> domainModels = await _repository.GetAllSessions();
+            IEnumerable<SessionModel> domainModels = await _repository.GetAllSessionsAsync();
             if (domainModels == null)
                 return NotFound();
 
@@ -59,10 +59,10 @@ namespace FrontDesk.API.Controllers
         /// <response code="404">Item not found</response>
         /// <response code="200">Sessions item successfully found</response>
         //  GET BY ID: api/session/{id}
-        [HttpGet("{id}", Name = nameof(GetSessionById))]
-        public async Task<ActionResult<SessionReadDto>> GetSessionById(int id)
+        [HttpGet("{id}", Name = nameof(GetSessionByIdAsync))]
+        public async Task<ActionResult<SessionReadDto>> GetSessionByIdAsync(int id)
         {
-            SessionModel domainModel = await _repository.GetSessionById(id);
+            SessionModel domainModel = await _repository.GetSessionByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 
@@ -80,7 +80,7 @@ namespace FrontDesk.API.Controllers
         //  INSERT: api/session
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<SessionReadDto>> InsertSession(SessionInsertDto insertDto)
+        public async Task<ActionResult<SessionReadDto>> InsertSessionAsync(SessionInsertDto insertDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -88,13 +88,13 @@ namespace FrontDesk.API.Controllers
             SessionModel domainModel = _mapper.Map<SessionModel>(insertDto);
             domainModel.WeekdayId = (int)(Weekdays)Enum.Parse(typeof(Weekdays), insertDto.Weekday, true);
 
-            bool isSuccessful = await _repository.InsertSession(domainModel);
+            bool isSuccessful = await _repository.InsertSessionAsync(domainModel);
             if (!isSuccessful)
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             SessionReadDto readDto = GetWeekdayCustomMapper().Map<SessionReadDto>(domainModel);
 
-            return CreatedAtRoute(nameof(GetSessionById), new { id = readDto.Id }, readDto);
+            return CreatedAtRoute(nameof(GetSessionByIdAsync), new { id = readDto.Id }, readDto);
         }
 
         /// <summary>
@@ -109,12 +109,12 @@ namespace FrontDesk.API.Controllers
         //  UPDATE: api/session
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> UpdateSession(SessionUpdateDto updateDto)
+        public async Task<IActionResult> UpdateSessionAsync(SessionUpdateDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            SessionModel domainModel = await _repository.GetSessionById(updateDto.Id);
+            SessionModel domainModel = await _repository.GetSessionByIdAsync(updateDto.Id);
             if (domainModel == null)
                 return NotFound();
 
@@ -142,9 +142,9 @@ namespace FrontDesk.API.Controllers
         //  PATCH: api/session/{id}
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> PatchSession(int id, JsonPatchDocument<SessionUpdateDto> patchDocument)
+        public async Task<IActionResult> PatchSessionAsync(int id, JsonPatchDocument<SessionUpdateDto> patchDocument)
         {
-            SessionModel sessionModel = await _repository.GetSessionById(id);
+            SessionModel sessionModel = await _repository.GetSessionByIdAsync(id);
             if (sessionModel == null)
                 return NotFound();
 
@@ -179,9 +179,9 @@ namespace FrontDesk.API.Controllers
         //  DELETE: api/session/{id}
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> DeleteSession(int id)
+        public async Task<IActionResult> DeleteSessionAsync(int id)
         {
-            SessionModel domainModel = await _repository.GetSessionById(id);
+            SessionModel domainModel = await _repository.GetSessionByIdAsync(id);
             if (domainModel == null)
                 return BadRequest();
 

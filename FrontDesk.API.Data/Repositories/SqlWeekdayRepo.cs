@@ -18,17 +18,17 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<WeekdayModel>> GetAllWeekdays()
+        public async Task<IEnumerable<WeekdayModel>> GetAllWeekdaysAsync()
         {
             return await _context.Weekday.ToListAsync();
         }
 
-        public async Task<WeekdayModel> GetWeekdayById(int id)
+        public async Task<WeekdayModel> GetWeekdayByIdAsync(int id)
         {
             return await _context.Weekday.FirstOrDefaultAsync(w => w.Id == id);
         }
 
-        public async Task<bool> InsertWeekday(WeekdayModel weekdayInsertModel)
+        public async Task<bool> InsertWeekdayAsync(WeekdayModel weekdayInsertModel)
         {
             if (weekdayInsertModel == null)
                 throw new ArgumentNullException(nameof(weekdayInsertModel));

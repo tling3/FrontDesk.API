@@ -33,9 +33,9 @@ namespace FrontDesk.API.Controllers
         /// <response code="200">Membership Type items successfully found</response>
         //  GET ALL: api/membershiptype
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MembershipTypeReadDto>>> GetAllMembershipTypes()
+        public async Task<ActionResult<IEnumerable<MembershipTypeReadDto>>> GetAllMembershipTypesAsync()
         {
-            IEnumerable<MembershipTypeModel> domainModel = await _repository.GetAllMembershipTypes();
+            IEnumerable<MembershipTypeModel> domainModel = await _repository.GetAllMembershipTypesAsync();
             if (domainModel == null)
                 return NotFound();
 
@@ -49,10 +49,10 @@ namespace FrontDesk.API.Controllers
         /// <response code="404">Item not found</response>
         /// <response code="200">Membership Type item successfully found</response>
         //  GET ALL: api/membershiptype
-        [HttpGet("{id}", Name = nameof(GetMembershipTypeById))]
-        public async Task<ActionResult<MembershipTypeReadDto>> GetMembershipTypeById(int id)
+        [HttpGet("{id}", Name = nameof(GetMembershipTypeByIdAsync))]
+        public async Task<ActionResult<MembershipTypeReadDto>> GetMembershipTypeByIdAsync(int id)
         {
-            MembershipTypeModel domainModel = await _repository.GetMembershipTypeById(id);
+            MembershipTypeModel domainModel = await _repository.GetMembershipTypeByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 
@@ -70,18 +70,18 @@ namespace FrontDesk.API.Controllers
         //  INSERT: api/membershiptype
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<MembershipTypeReadDto>> InsertMembershipType(MembershipTypeInsertDto insertDto)
+        public async Task<ActionResult<MembershipTypeReadDto>> InsertMembershipTypeAsync(MembershipTypeInsertDto insertDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             MembershipTypeModel domainModel = _mapper.Map<MembershipTypeModel>(insertDto);
-            bool isSuccessfull = await _repository.InsertMembershipType(domainModel);
+            bool isSuccessfull = await _repository.InsertMembershipTypeAsync(domainModel);
             if (!isSuccessfull)
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             MembershipTypeReadDto readDto = _mapper.Map<MembershipTypeReadDto>(domainModel);
-            return CreatedAtRoute(nameof(GetMembershipTypeById), new { id = readDto.Id }, readDto);
+            return CreatedAtRoute(nameof(GetMembershipTypeByIdAsync), new { id = readDto.Id }, readDto);
         }
 
         /// <summary>
@@ -96,12 +96,12 @@ namespace FrontDesk.API.Controllers
         //  UPDATE: api/membershiptype/{id}
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> UpdateMembershipType(MembershipTypeUpdateDto updateDto)
+        public async Task<IActionResult> UpdateMembershipTypeAsync(MembershipTypeUpdateDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            MembershipTypeModel domainModel = await _repository.GetMembershipTypeById(updateDto.Id);
+            MembershipTypeModel domainModel = await _repository.GetMembershipTypeByIdAsync(updateDto.Id);
             if (domainModel == null)
                 return NotFound();
 
@@ -127,9 +127,9 @@ namespace FrontDesk.API.Controllers
         //  PATCH: api/membershiptype/{id}
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> PatchMembershipType(int id, JsonPatchDocument<MembershipTypeUpdateDto> patchDocument)
+        public async Task<IActionResult> PatchMembershipTypeAsync(int id, JsonPatchDocument<MembershipTypeUpdateDto> patchDocument)
         {
-            MembershipTypeModel domainModel = await _repository.GetMembershipTypeById(id);
+            MembershipTypeModel domainModel = await _repository.GetMembershipTypeByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 
@@ -160,9 +160,9 @@ namespace FrontDesk.API.Controllers
         //  DELETE: api/membershiptype/{id}
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> DeleteMembershipType(int id)
+        public async Task<IActionResult> DeleteMembershipTypeAsync(int id)
         {
-            MembershipTypeModel domainModel = await _repository.GetMembershipTypeById(id);
+            MembershipTypeModel domainModel = await _repository.GetMembershipTypeByIdAsync(id);
             if (domainModel == null)
                 return BadRequest();
 

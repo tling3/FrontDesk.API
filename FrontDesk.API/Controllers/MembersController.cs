@@ -33,9 +33,9 @@ namespace FrontDesk.API.Controllers
         /// <response code="200">Member items successfully found</response>
         //  GET ALL: api/member
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberReadDto>>> GetAllMembers()
+        public async Task<ActionResult<IEnumerable<MemberReadDto>>> GetAllMembersAsync()
         {
-            IEnumerable<MemberModel> memberModels = await _repository.GetAllMembers();
+            IEnumerable<MemberModel> memberModels = await _repository.GetAllMembersAsync();
             if (memberModels == null)
                 return NotFound();
 
@@ -49,10 +49,10 @@ namespace FrontDesk.API.Controllers
         /// <response code="404">Item not found</response>
         /// <response code="200">Member item successfully found</response>
         //  GET ALL: api/member/{id}
-        [HttpGet("{id}", Name = nameof(GetMemberById))]
-        public async Task<ActionResult<MemberReadDto>> GetMemberById(int id)
+        [HttpGet("{id}", Name = nameof(GetMemberByIdAsync))]
+        public async Task<ActionResult<MemberReadDto>> GetMemberByIdAsync(int id)
         {
-            MemberModel domainModel = await _repository.GetMemberById(id);
+            MemberModel domainModel = await _repository.GetMemberByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 
@@ -70,19 +70,19 @@ namespace FrontDesk.API.Controllers
         // INSERT: api/member
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<MemberReadDto>> InsertMember(MemberInsertDto insertDto)
+        public async Task<ActionResult<MemberReadDto>> InsertMemberAsync(MemberInsertDto insertDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             MemberModel domainModel = _mapper.Map<MemberModel>(insertDto);
 
-            bool isSuccessful = await _repository.InsertMember(domainModel);
+            bool isSuccessful = await _repository.InsertMemberAsync(domainModel);
             if (!isSuccessful)
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             var memberReadDto = _mapper.Map<MemberReadDto>(domainModel);
-            return CreatedAtRoute(nameof(GetMemberById), new { id = memberReadDto.Id }, memberReadDto);
+            return CreatedAtRoute(nameof(GetMemberByIdAsync), new { id = memberReadDto.Id }, memberReadDto);
         }
 
 
@@ -98,12 +98,12 @@ namespace FrontDesk.API.Controllers
         //  UPDATE: api/member
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> UpdateMember(MemberUpdateDto updateDto)
+        public async Task<IActionResult> UpdateMemberAsync(MemberUpdateDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            MemberModel domainModel = await _repository.GetMemberById(updateDto.Id);
+            MemberModel domainModel = await _repository.GetMemberByIdAsync(updateDto.Id);
             if (domainModel == null)
                 return NotFound();
 
@@ -129,9 +129,9 @@ namespace FrontDesk.API.Controllers
         //  PATCH: api/member/{id}
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> PatchMember(int id, JsonPatchDocument<MemberUpdateDto> patchDocument)
+        public async Task<IActionResult> PatchMemberAsync(int id, JsonPatchDocument<MemberUpdateDto> patchDocument)
         {
-            MemberModel domainModel = await _repository.GetMemberById(id);
+            MemberModel domainModel = await _repository.GetMemberByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 
@@ -161,9 +161,9 @@ namespace FrontDesk.API.Controllers
         //  DELETE: api/member/{id}
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> DeleteMember(int id)
+        public async Task<IActionResult> DeleteMemberAsync(int id)
         {
-            MemberModel domainModel = await _repository.GetMemberById(id);
+            MemberModel domainModel = await _repository.GetMemberByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 

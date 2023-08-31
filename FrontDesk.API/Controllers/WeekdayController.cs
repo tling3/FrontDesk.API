@@ -34,9 +34,9 @@ namespace FrontDesk.API.Controllers
         /// <response code="200">Weekday items successfully found</response>
         //  GET ALL: api/weekday
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<WeekdayReadDto>>> GetAllWeekdays()
+        public async Task<ActionResult<IEnumerable<WeekdayReadDto>>> GetAllWeekdaysAsync()
         {
-            IEnumerable<WeekdayModel> domainModels = await _repository.GetAllWeekdays();
+            IEnumerable<WeekdayModel> domainModels = await _repository.GetAllWeekdaysAsync();
             if (domainModels == null)
                 return NotFound();
 
@@ -51,10 +51,10 @@ namespace FrontDesk.API.Controllers
         /// <response code="404">Item not found</response>
         /// <response code="200">Weekday item successfully found </response>
         //  GET BY ID: api/weekday/{id}
-        [HttpGet("{id}", Name = nameof(GetWeekdayById))]
-        public async Task<ActionResult<WeekdayReadDto>> GetWeekdayById(int id)
+        [HttpGet("{id}", Name = nameof(GetWeekdayByIdAsync))]
+        public async Task<ActionResult<WeekdayReadDto>> GetWeekdayByIdAsync(int id)
         {
-            WeekdayModel weekdayModel = await _repository.GetWeekdayById(id);
+            WeekdayModel weekdayModel = await _repository.GetWeekdayByIdAsync(id);
             if (weekdayModel == null)
                 return NotFound();
 
@@ -72,19 +72,19 @@ namespace FrontDesk.API.Controllers
         //  INSERT: api/weekday
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<WeekdayReadDto>> InsertWeekday(WeekdayInsertDto insertDto)
+        public async Task<ActionResult<WeekdayReadDto>> InsertWeekdayAsync(WeekdayInsertDto insertDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             WeekdayModel domainModel = _mapper.Map<WeekdayModel>(insertDto);
-            bool isSuccessful = await _repository.InsertWeekday(domainModel);
+            bool isSuccessful = await _repository.InsertWeekdayAsync(domainModel);
             if (!isSuccessful)
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             WeekdayReadDto readDto = _mapper.Map<WeekdayReadDto>(domainModel);
 
-            return CreatedAtRoute(nameof(GetWeekdayById), new { id = readDto.Id }, readDto);
+            return CreatedAtRoute(nameof(GetWeekdayByIdAsync), new { id = readDto.Id }, readDto);
         }
 
         /// <summary>
@@ -100,12 +100,12 @@ namespace FrontDesk.API.Controllers
         //  UPDATE: api/weekday/{id}
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> UpdateWeekday(WeekdayUpdateDto updateDto)
+        public async Task<IActionResult> UpdateWeekdayAsync(WeekdayUpdateDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            WeekdayModel domainModel = await _repository.GetWeekdayById(updateDto.Id);
+            WeekdayModel domainModel = await _repository.GetWeekdayByIdAsync(updateDto.Id);
             if (domainModel == null)
                 return NotFound();
 
@@ -131,9 +131,9 @@ namespace FrontDesk.API.Controllers
         //  PATCH: api/weekday/{id}
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> PatchWeekday(int id, JsonPatchDocument<WeekdayUpdateDto> patchDocument)
+        public async Task<IActionResult> PatchWeekdayAsync(int id, JsonPatchDocument<WeekdayUpdateDto> patchDocument)
         {
-            WeekdayModel weekdayModel = await _repository.GetWeekdayById(id);
+            WeekdayModel weekdayModel = await _repository.GetWeekdayByIdAsync(id);
             if (weekdayModel == null)
                 return NotFound();
 
@@ -162,9 +162,9 @@ namespace FrontDesk.API.Controllers
         /// <response code="204">Weekday item was successfully deleted</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult> DeleteWeekday(int id)
+        public async Task<IActionResult> DeleteWeekdayAsync(int id)
         {
-            WeekdayModel domainModel = await _repository.GetWeekdayById(id);
+            WeekdayModel domainModel = await _repository.GetWeekdayByIdAsync(id);
             if (domainModel == null)
                 return NotFound();
 

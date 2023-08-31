@@ -21,24 +21,24 @@ namespace FrontDesk.API.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<AttendanceModel>> GetAllAttendance()
+        public async Task<IEnumerable<AttendanceModel>> GetAllAttendanceAsync()
         {
             return await _context.Attendance.ToListAsync();
         }
 
-        public async Task<List<AttendanceModel>> GetAttendanceByMemberId(int id)
+        public async Task<List<AttendanceModel>> GetAttendanceByMemberIdAsync(int id)
         {
             return await _context.Attendance
                 .Where(model => model.MemberId == id)
                 .ToListAsync();
         }
 
-        public async Task<AttendanceModel> GetAttendanceBySessionId(int sessionId)
+        public async Task<AttendanceModel> GetAttendanceBySessionIdAsync(int sessionId)
         {
             return await _context.Attendance.FirstOrDefaultAsync(model => model.SessionId == sessionId);
         }
 
-        public async Task<List<AttendancePerSessionDto>> GetAttendancePerSession(int sessionId, DateTime date)
+        public async Task<List<AttendancePerSessionDto>> GetAttendancePerSessionAsync(int sessionId, DateTime date)
         {
             List<AttendancePerSessionDto> attendancePerSession = await _context.Attendance
                 .Join(
@@ -62,7 +62,7 @@ namespace FrontDesk.API.Data.Repositories
             return attendancePerSession;
         }
 
-        public async Task<bool> InsertAttendance(AttendanceModel attendance)
+        public async Task<bool> InsertAttendanceAsync(AttendanceModel attendance)
         {
             if (attendance == null)
                 throw new ArgumentNullException(nameof(attendance));
