@@ -1,9 +1,5 @@
 # FrontDesk.API
 
-I wrote this application as a side project to continue to refine my skills with a .Net Core Web API. The application itself and the technology involved is described below.
-
-## FrontDesk.API Description
-
 This is a RESTful .Net Core Web API developed for a Single Page Application (SPA) that tracks participants checking-in for an activity.  The data pertains to members, memberships, and their attendance.
 
 ## FrontDesk.API Technology
